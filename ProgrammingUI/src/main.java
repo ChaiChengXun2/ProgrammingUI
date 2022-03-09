@@ -12,6 +12,7 @@ public class main
 	public static Color darkgreen = new Color(40, 72, 77);
 	public static Color lightgreen = new Color(168, 200, 208);
 	public static Color grey = new Color(199, 208, 216);
+	public static Color transparent = new Color(0, 0, 0, 0);
 	   
 	public static void main(String args[])  
 	{  
@@ -306,6 +307,7 @@ public class main
 		mainFrame.setSize(1050, 725);
 		mainFrame.setTitle("Title Here");
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
+		mainFrame.setLocationRelativeTo(null);
 		mainFrame.setVisible(true);  
 	}  
 } 

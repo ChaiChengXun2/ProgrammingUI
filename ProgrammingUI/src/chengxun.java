@@ -88,6 +88,7 @@ public class chengxun
 				
 				procedureFrame.setSize(700, 375);
 				procedureFrame.add(mainPanel);
+				procedureFrame.setLocationRelativeTo(null);
 				procedureFrame.setVisible(true);
 			}
 		});
@@ -142,6 +143,7 @@ public class chengxun
 				
 				procedureFrame.setSize(700, 375);
 				procedureFrame.add(mainPanel);
+				procedureFrame.setLocationRelativeTo(null);
 				procedureFrame.setVisible(true);
 			}
 		});
@@ -196,6 +198,7 @@ public class chengxun
 				
 				procedureFrame.setSize(700, 375);
 				procedureFrame.add(mainPanel);
+				procedureFrame.setLocationRelativeTo(null);
 				procedureFrame.setVisible(true);
 			}
 		});
