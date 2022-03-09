@@ -6,7 +6,7 @@ public class yueming
 {
 	public static JPanel newPanel()
 	{ 
-		ImageIcon FBing = new ImageIcon("src/Global-FoodBanking.png");
+		ImageIcon FBing = new ImageIcon("ProgrammingUI/src/Global-FoodBanking.png");
 		
 		JPanel panel = new JPanel(); 
 		panel.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4,Color.decode("#69a2ff")));

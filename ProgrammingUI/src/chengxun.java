@@ -27,9 +27,9 @@ public class chengxun
 		
 		
 		// creation of panels for my cards
-		JPanel clothesCard = chengxun.createCard("Donate Unwanted Clothes Here", "src/Donate Clothes.png");
-		JPanel phoneCard = chengxun.createCard("Donate Mobile Phones Here", "src/Donate Mobile Device.png");
-		JPanel bottleCard = chengxun.createCard("Donate Unwanted Items Here", "src/Donate Water Bottle.png");
+		JPanel clothesCard = chengxun.createCard("Donate Unwanted Clothes Here", "ProgrammingUI/src/Donate Clothes.png");
+		JPanel phoneCard = chengxun.createCard("Donate Mobile Phones Here", "ProgrammingUI/src/Donate Mobile Device.png");
+		JPanel bottleCard = chengxun.createCard("Donate Unwanted Items Here", "ProgrammingUI/src/Donate Water Bottle.png");
 		
 		// add the things into main panel
 		picturePanel.add(clothesCard);
@@ -50,7 +50,7 @@ public class chengxun
 				mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 				
 				JPanel picturePanel = new JPanel(); 
-				picturePanel.add(new JLabel(new ImageIcon("src/No Poverty Icon.png")));
+				picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
 				picturePanel.setPreferredSize(new Dimension(250, 250));
 				
 				JLabel thankYou = new JLabel("Thank you for choosing NoPoverty");
@@ -104,7 +104,7 @@ public class chengxun
 				mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 				
 				JPanel picturePanel = new JPanel(); 
-				picturePanel.add(new JLabel(new ImageIcon("src/No Poverty Icon.png")));
+				picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
 				picturePanel.setPreferredSize(new Dimension(250, 250));
 				
 				JLabel thankYou = new JLabel("Thank you for choosing NoPoverty");
@@ -158,7 +158,7 @@ public class chengxun
 				mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 				
 				JPanel picturePanel = new JPanel(); 
-				picturePanel.add(new JLabel(new ImageIcon("src/No Poverty Icon.png")));
+				picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
 				picturePanel.setPreferredSize(new Dimension(250, 250));
 				
 				JLabel thankYou = new JLabel("Thank you for choosing NoPoverty");

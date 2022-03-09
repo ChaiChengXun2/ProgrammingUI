@@ -33,7 +33,7 @@ public class register
 		contentPanel.setBackground(main.darkgreen);
 		
 		// adding image to the first sub panel
-		JLabel picture = new JLabel(new ImageIcon("src/UserIcon.png"));
+		JLabel picture = new JLabel(new ImageIcon("ProgrammingUI/src/UserIcon.png"));
 		picture.setPreferredSize(new Dimension(191, 191));
 		picturePanel.add(picture, BorderLayout.CENTER);
 		

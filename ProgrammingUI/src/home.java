@@ -19,7 +19,6 @@ public class home
 		JPanel btnPanel = new JPanel(); 
 		JPanel labelPanel = new JPanel();
 		
-		
 		// configuration of structure panels
 		slidePanel.setPreferredSize(new Dimension(1050, 450));
 		contentPanel.setPreferredSize(new Dimension(1050, 215));
@@ -38,11 +37,11 @@ public class home
 		slidePanel.setLayout(myLayout);
 		
 		// added pictures
-		JLabel introduction = new JLabel(new ImageIcon("src/introduction.png"));
-		JLabel water = new JLabel(new ImageIcon("src/LifeBelowWater.png"));
-		JLabel land = new JLabel(new ImageIcon("src/LifeOnLand.png"));
-		JLabel hunger = new JLabel(new ImageIcon("src/NoHunger.png"));
-		JLabel poverty = new JLabel(new ImageIcon("src/NoPoverty.png"));
+		JLabel introduction = new JLabel(new ImageIcon("ProgrammingUI/src/introduction.png"));
+		JLabel water = new JLabel(new ImageIcon("ProgrammingUI/src/LifeBelowWater.png"));
+		JLabel land = new JLabel(new ImageIcon("ProgrammingUI/src/LifeOnLand.png"));
+		JLabel hunger = new JLabel(new ImageIcon("ProgrammingUI/src/NoHunger.png"));
+		JLabel poverty = new JLabel(new ImageIcon("ProgrammingUI/src/NoPoverty.png"));
 		
 		// created panels to put pictures
 		JPanel introductionPanel = new JPanel(); 
@@ -157,7 +156,7 @@ public class home
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				myLayout.show(slidePanel, "4");
+				myLayout.show(slidePanel, "5");
 				msg.setText("Your Trash Might Be Someone Else's Treasure!");
 				msg2.setText("Donate to people in need now!!");
 			}
