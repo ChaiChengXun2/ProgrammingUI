@@ -16,12 +16,13 @@ public class main
 	   
 	public static void main(String args[])  
 	{  
+		// our logo
 		ImageIcon logo = new ImageIcon("ProgrammingUI/src/logo.png");
-		ImageIcon biggerLogo = new ImageIcon("ProgrammingUI/src/logobig.png");
 		
 		// creation of main frame
 		JFrame mainFrame = new JFrame(); 
 		  
+		// creation of panels
 		JPanel contentPanel = new JPanel();  
 		JPanel btnPanel = new JPanel();  
 		CardLayout slidePanel = new CardLayout();  
@@ -66,6 +67,7 @@ public class main
 		JLabel registerLbl = new JLabel("Register");
 		JLabel loginLbl = new JLabel("Login");
 		
+		// configuration for each button
 		homeLbl.setForeground(main.lightgreen);
 		cxLbl.setForeground(main.lightgreen);
 		haLbl.setForeground(main.lightgreen);
@@ -76,6 +78,7 @@ public class main
 		registerLbl.setForeground(main.lightgreen);
 		loginLbl.setForeground(main.lightgreen);
 		
+		// more configuration for each button
 		cxLbl.setFont(new Font("Verdana", Font.PLAIN, 13));
 		haLbl.setFont(new Font("Verdana", Font.PLAIN, 13));
 		ymLbl.setFont(new Font("Verdana", Font.PLAIN, 13));
@@ -85,8 +88,7 @@ public class main
 		registerLbl.setFont(new Font("Verdana", Font.PLAIN, 13));
 		loginLbl.setFont(new Font("Verdana", Font.PLAIN, 13));
 		
-		// setting general size for buttons
-		
+		// creation of panels to place labels
 		JPanel home = new JPanel();
 		JPanel cx = new JPanel();
 		JPanel ha = new JPanel();
@@ -97,26 +99,20 @@ public class main
 		JPanel register = new JPanel();
 		JPanel login = new JPanel();
 		
+		// configuration of home logo
 		home.setPreferredSize(new Dimension(60, 60));
-		cx.setBounds(200, 200, 35, 35);
-		ha.setBounds(200, 200, 35, 35);
-		ym.setBounds(200, 200, 35, 35);
-		zj.setBounds(200, 200, 35, 35);
-		merch.setBounds(200, 200, 35, 35);
-		sub.setBounds(200, 200, 35, 35);
-		register.setBounds(200, 200, 35, 35);
-		login.setBounds(200, 200, 35, 35);
 		
-		home.setBackground(main.darkgreen);
-		cx.setBackground(main.darkgreen);
-		ha.setBackground(main.darkgreen);
-		ym.setBackground(main.darkgreen);
-		zj.setBackground(main.darkgreen);
-		sub.setBackground(main.darkgreen);
-		register.setBackground(main.darkgreen);
-		merch.setBackground(main.darkgreen);
-		login.setBackground(main.darkgreen);
-		home.setBackground(main.darkgreen);
+		// configuration of panels 
+		home.setBackground(main.transparent);
+		cx.setBackground(main.transparent);
+		ha.setBackground(main.transparent);
+		ym.setBackground(main.transparent);
+		zj.setBackground(main.transparent);
+		sub.setBackground(main.transparent);
+		register.setBackground(main.transparent);
+		merch.setBackground(main.transparent);
+		login.setBackground(main.transparent);
+		home.setBackground(main.transparent);
 		
 		// placing buttons into top panel
 		home.add(homeLbl);
