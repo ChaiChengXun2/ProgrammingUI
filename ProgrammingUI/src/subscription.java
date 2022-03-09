@@ -3,6 +3,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class subscription {
+	
+	public static boolean isSub = false;
+	
 	public static JPanel createSubscriptionPanel()
 	{ 
 		JPanel panel = new JPanel(); 

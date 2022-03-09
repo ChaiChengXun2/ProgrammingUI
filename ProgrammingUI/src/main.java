@@ -24,8 +24,8 @@ public class main
 		  
 		// creation of panels
 		JPanel contentPanel = new JPanel();  
-		JPanel btnPanel = new JPanel();  
-		CardLayout slidePanel = new CardLayout();  
+		CardLayout slidePanel = new CardLayout();
+		JPanel btnPanel = new JPanel();   
 		
 		// configurations of top and bottom panels
 		contentPanel.setLayout(slidePanel);  
