@@ -88,7 +88,15 @@ public class register
 		errorMsg.setHorizontalAlignment(JLabel.CENTER);
 		
 		// creation of register button
-		JButton registerBtn = new JButton("Register");
+		JPanel registerLbl = new JPanel();
+		JLabel register = new JLabel("Register");
+		
+		registerLbl.setBackground(main.darkgreen);
+		
+		register.setFont(new Font("Verdana", Font.PLAIN, 15));
+		register.setForeground(main.lightgreen);
+		
+		registerLbl.add(register);
 		
 		// adding everything into the main panel
 		inputPanel.add(title);
@@ -99,16 +107,16 @@ public class register
 		inputPanel.add(passwordInput);
 		inputPanel.add(confirmationLabel);
 		inputPanel.add(confirmationInput);
-		inputPanel.add(registerBtn);
+		inputPanel.add(registerLbl);
 		inputPanel.add(errorMsg);
 		contentPanel.add(inputPanel);
 		largePanel.add(picturePanel, BorderLayout.NORTH);
 		largePanel.add(contentPanel, BorderLayout.CENTER);
 		
 		// event handling for register button
-		registerBtn.addActionListener(new ActionListener() 
+		registerLbl.addMouseListener(new MouseAdapter() 
 		{
-			public void actionPerformed(ActionEvent e)
+			public void mouseClicked(MouseEvent e)
 			{
 				if (nameInput.getText().isEmpty() || passwordInput.getText().isEmpty() || confirmationInput.getText().isEmpty())
 				{ 
@@ -134,15 +142,26 @@ public class register
 				else if (!(confirmationInput.getText().equals(passwordInput.getText())))
 				{
 					errorMsg.setText("Confirmation Password does not match Passowrd");
+					errorMsg.setForeground(Color.red);
 					JOptionPane.showMessageDialog(null, "Confirmation Password does not match Passowrd", "Password Error", JOptionPane.ERROR_MESSAGE);
 				}
 				else
 				{ 
 					errorMsg.setForeground(Color.green);
 					errorMsg.setText("Account Succesfully Created");
-					register.username = nameInput.getText(); 
-					register.password = passwordInput.getText();
+					username = nameInput.getText(); 
+					password = passwordInput.getText();
 				}
+			}
+			public void mouseEntered(MouseEvent e) 
+			{ 
+				register.setFont(new Font("Verdana", Font.BOLD, 17));
+				register.setForeground(main.grey);
+			}
+			public void mouseExited(MouseEvent e) 
+			{ 
+				register.setFont(new Font("Verdana", Font.PLAIN, 15));
+				registerLbl.setBackground(main.darkgreen);
 			}
 		});
 		

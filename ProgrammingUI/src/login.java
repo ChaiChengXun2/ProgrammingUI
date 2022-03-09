@@ -84,7 +84,15 @@ public class login
 		errorMsg.setHorizontalAlignment(JLabel.CENTER);
 		
 		// creation of register button
-		JButton loginBtn = new JButton("Register");
+		JPanel loginLbl = new JPanel();
+		JLabel login = new JLabel("Login");
+		
+		loginLbl.setBackground(main.darkgreen);
+		
+		login.setFont(new Font("Verdana", Font.PLAIN, 15));
+		login.setForeground(main.lightgreen);
+		
+		loginLbl.add(login);
 		
 		// adding everything into the main panel
 		inputPanel.add(title);
@@ -94,7 +102,7 @@ public class login
 		inputPanel.add(passwordLabel);
 		inputPanel.add(passwordInput);
 		inputPanel.add(empty2);
-		inputPanel.add(loginBtn);
+		inputPanel.add(loginLbl);
 		inputPanel.add(errorMsg);
 		contentPanel.add(inputPanel);
 		largePanel.add(picturePanel, BorderLayout.NORTH);
@@ -102,9 +110,9 @@ public class login
 		
 		
 		//event handling for login button
-		loginBtn.addActionListener(new ActionListener() 
+		loginLbl.addMouseListener(new MouseAdapter() 
 		{
-			public void actionPerformed(ActionEvent e)
+			public void mouseClicked(MouseEvent e)
 			{
 				if (nameInput.getText().isEmpty() || passwordInput.getText().isEmpty())
 				{ 
@@ -123,7 +131,7 @@ public class login
 				{ 
 					if (nameInput.getText().equals(register.username) && passwordInput.getText().equals(register.password))
 					{
-						login.isLogin = true;
+						isLogin = true;
 						errorMsg.setText("Login Successfully");
 						errorMsg.setForeground(Color.green);
 					}
@@ -134,6 +142,16 @@ public class login
 						JOptionPane.showMessageDialog(null, "Login Error \nMaybe account is not created?");
 					}
 				}
+			}
+			public void mouseEntered(MouseEvent e) 
+			{ 
+				login.setFont(new Font("Verdana", Font.BOLD, 17));
+				login.setForeground(main.grey);
+			}
+			public void mouseExited(MouseEvent e) 
+			{ 
+				login.setFont(new Font("Verdana", Font.PLAIN, 15));
+				loginLbl.setBackground(main.darkgreen);
 			}
 		});
 		

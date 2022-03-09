@@ -229,13 +229,26 @@ public class chengxun
 		
 		//creation of text
 		JLabel text = new JLabel(description, SwingConstants.HORIZONTAL);
-		text.setFont(new Font("Verdana", Font.BOLD, 12));
+		text.setFont(new Font("Verdana", Font.PLAIN, 12));
 		text.setForeground(main.lightgreen);
 		
 		// adding everything into main panel and return the panel
 		textPanel.add(text, BorderLayout.CENTER);
 		mainPanel.add(picturePanel, BorderLayout.NORTH);
 		mainPanel.add(textPanel, BorderLayout.SOUTH);
+		
+		mainPanel.addMouseListener(new MouseAdapter() {
+			public void mouseEntered(MouseEvent e) 
+			{ 
+				text.setFont(new Font("Verdana", Font.BOLD, 12));
+				picturePanel.setBackground(main.darkgreen);
+			}
+			public void mouseExited(MouseEvent e) 
+			{ 
+				text.setFont(new Font("Verdana", Font.PLAIN, 12));
+				picturePanel.setBackground(main.grey);
+			}
+		});
 		
 		return mainPanel;
 	}
