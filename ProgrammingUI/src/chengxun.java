@@ -12,18 +12,22 @@ public class chengxun
 		panel.setBackground(main.lightgreen);
 		panel.setLayout(new BorderLayout(0, 0));
 		
-		//write your code below 
+		// image
+		ImageIcon banner = new ImageIcon("ProgrammingUI/src/cxBanner.png");
 		
-		// creation of top panel 
+		// creation of content panel
 		JPanel contentPanel = new JPanel(); 
 		contentPanel.setBackground(main.grey);
-		contentPanel.setPreferredSize(new Dimension(1050, 300));
+		contentPanel.setPreferredSize(new Dimension(1050, 315));
+		
+		JLabel cxBanner = new JLabel(banner);
+		contentPanel.add(cxBanner);
 		
 		// creation of panels to put cards
 		JPanel picturePanel = new JPanel(); 
 		picturePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 100, 0));
 		picturePanel.setBackground(main.lightgreen);
-		picturePanel.setPreferredSize(new Dimension(1050, 200));
+		picturePanel.setPreferredSize(new Dimension(1050, 300));
 		
 		
 		// creation of panels for my cards
@@ -38,6 +42,7 @@ public class chengxun
 		panel.add(contentPanel, BorderLayout.NORTH);
 		panel.add(picturePanel, BorderLayout.CENTER);
 		
+		// event handlers
 		clothesCard.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
 			{ 
@@ -88,6 +93,7 @@ public class chengxun
 				
 				procedureFrame.setSize(700, 375);
 				procedureFrame.add(mainPanel);
+				procedureFrame.setLocationRelativeTo(null);
 				procedureFrame.setVisible(true);
 			}
 		});
@@ -142,6 +148,7 @@ public class chengxun
 				
 				procedureFrame.setSize(700, 375);
 				procedureFrame.add(mainPanel);
+				procedureFrame.setLocationRelativeTo(null);
 				procedureFrame.setVisible(true);
 			}
 		});
@@ -196,6 +203,7 @@ public class chengxun
 				
 				procedureFrame.setSize(700, 375);
 				procedureFrame.add(mainPanel);
+				procedureFrame.setLocationRelativeTo(null);
 				procedureFrame.setVisible(true);
 			}
 		});
@@ -237,6 +245,7 @@ public class chengxun
 		mainPanel.add(picturePanel, BorderLayout.NORTH);
 		mainPanel.add(textPanel, BorderLayout.SOUTH);
 		
+		// event handlers
 		mainPanel.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) 
 			{ 

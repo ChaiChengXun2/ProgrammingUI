@@ -4,6 +4,24 @@ import java.awt.event.*;
 
 public class home
 {
+	public static int curr = 1;
+	public static String arrayOfSlogans[] = {
+			"", 
+			"Hotel? Trivago.",
+			"Hong Aik Slogan 1st Line",
+			"Zi Jie Slogan 1st Line", 
+			"Hunger Relief Now", 
+			"Your Trash Might Be Someone Else's Treasure"
+	};
+	public static String arrayOfSlogans2[] = {
+			"",
+			"Donation? <title here>",
+			"Hong Aik Slogan 2nd Line",
+			"Zi Jie Slogan 2nd Line",
+			"Resilience Tomorrow",
+			"Donate to People in Need Now"
+	};
+	
 	public static JPanel newPanel()
 	{ 
 		JPanel panel = new JPanel(); 
@@ -79,86 +97,102 @@ public class home
 		slidePanel.add(povertyPanel, "5"); 
 		
 		// creation and configuration of buttons
-		JButton one = new JButton("1");
-		JButton two = new JButton("2");
-		JButton three = new JButton("3");
-		JButton four = new JButton ("4");
-		JButton five = new JButton("5");
-		one.setBounds(200, 200, 35, 35);
-		two.setBounds(200, 200, 35, 35);
-		three.setBounds(200, 200, 35, 35);
-		four.setBounds(200, 200, 35, 35);
-		five.setBounds(200, 200, 35, 35);
+		JPanel nextPanel = new JPanel(); 
+		JPanel prevPanel = new JPanel();
+		
+		nextPanel.setPreferredSize(new Dimension(500, 450));
+		prevPanel.setPreferredSize(new Dimension(500, 450));
+		nextPanel.setBackground(main.transparent);
+		prevPanel.setBackground(main.transparent);
+		
+		JLabel next = new JLabel(">");
+		JLabel prev = new JLabel("<");
+		
+		next.setFont(new Font("Verdana", Font.PLAIN, 20));
+		prev.setFont(new Font("Verdana", Font.PLAIN, 20));
 		
 		// adding buttons into button panels
-		btnPanel.add(one); 
-		btnPanel.add(two); 
-		btnPanel.add(three); 
-		btnPanel.add(four);
-		btnPanel.add(five);
+		nextPanel.add(next);
+		prevPanel.add(prev);
+		btnPanel.add(prevPanel);
+		btnPanel.add(nextPanel);
 		
 		// creating the messages
 		JLabel msg = new JLabel("Hotel? Trivago."); 
 		labelPanel.add(msg);
 		msg.setHorizontalAlignment(JLabel.CENTER);
-		msg.setFont(new Font("Verdana", Font.BOLD, 25));
+		msg.setFont(new Font("Verdana", Font.BOLD, 20));
 		msg.setPreferredSize(new Dimension(1050, 25));
 		
 		// creating messages part 2
 		JLabel msg2 = new JLabel("Donation? <title here>."); 
 		labelPanel.add(msg2);
 		msg2.setHorizontalAlignment(JLabel.CENTER);
-		msg2.setFont(new Font("Verdana", Font.BOLD, 25));
+		msg2.setFont(new Font("Verdana", Font.BOLD, 20));
 		msg2.setPreferredSize(new Dimension(1050, 25));
 		
 		// event handling
-		one.addActionListener(new ActionListener() 
+		nextPanel.addMouseListener(new MouseAdapter() 
 		{
-			public void actionPerformed(ActionEvent e)
+			public void mouseClicked(MouseEvent e)
 			{
-				myLayout.show(slidePanel, "1");
-				msg.setText("Hotel? Trivago.");
-				msg2.setText("Donation? <title here>.");
+				if (curr < 6 && curr > 0)
+				{
+					if (curr >= 5)
+					{
+						curr += 0;
+					}
+					else
+					{
+						curr++;
+						String value = String.valueOf(curr);
+						myLayout.show(slidePanel, value);
+						msg.setText(arrayOfSlogans[curr]);
+						msg2.setText(arrayOfSlogans2[curr]);
+					}
+				}
+			}
+			
+			public void mouseEntered(MouseEvent e)
+			{
+				nextPanel.setBackground(main.grey);
+			}
+			
+			public void mouseExited(MouseEvent e)
+			{
+				nextPanel.setBackground(main.lightgreen);
 			}
 		});
 		
-		two.addActionListener(new ActionListener() 
+		prevPanel.addMouseListener(new MouseAdapter() 
 		{
-			public void actionPerformed(ActionEvent e)
+			public void mouseClicked(MouseEvent e)
 			{
-				myLayout.show(slidePanel, "2");
-				msg.setText("Hong Aik Slogan");
-				msg2.setText("Hong Aik Slogan");
+				if (curr > 0)
+				{
+					if (curr == 1)
+					{
+						curr -= 0;
+					}
+					else
+					{
+						curr--;
+						String value = String.valueOf(curr);
+						myLayout.show(slidePanel, value);
+						msg.setText(arrayOfSlogans[curr]);
+						msg2.setText(arrayOfSlogans2[curr]);	
+					}
+				}
 			}
-		});
-
-		three.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e)
+			
+			public void mouseEntered(MouseEvent e)
 			{
-				myLayout.show(slidePanel, "3");
-				msg.setText("Zi Jie Slogan");
-				msg2.setText("Zi Jie Slogan");
+				prevPanel.setBackground(main.grey);
 			}
-		});
-		
-		four.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e)
+			
+			public void mouseExited(MouseEvent e)
 			{
-				myLayout.show(slidePanel, "4");
-				msg.setText("Hunger Relief Now.");
-				msg2.setText("Resilience Tomorrow.");
-			}
-		});
-		
-		five.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				myLayout.show(slidePanel, "5");
-				msg.setText("Your Trash Might Be Someone Else's Treasure!");
-				msg2.setText("Donate to people in need now!!");
+				prevPanel.setBackground(main.lightgreen);
 			}
 		});
 		
