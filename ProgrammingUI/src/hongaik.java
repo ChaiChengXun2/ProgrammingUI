@@ -6,7 +6,7 @@ import java.text.NumberFormat;
 public class hongaik {
 	public static JPanel newPanel() { 
 		
-ImageIcon TitleIcon = new ImageIcon("Beach.jpg");
+ImageIcon TitleIcon = new ImageIcon("ProgrammingUI/src/Beach 2.jpg");
 		
 		JPanel panel = new JPanel(); 
 		panel.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4,Color.decode("#000000")));
@@ -18,6 +18,7 @@ ImageIcon TitleIcon = new ImageIcon("Beach.jpg");
 		Title.setIcon(TitleIcon);
 		Title.setText("Welcome to Life Below Water Site");
 		Title.setVerticalAlignment(JLabel.TOP);
+		Title.setHorizontalAlignment(JLabel.CENTER);
 		
 		//write your code below 
 		JPanel Intro = new JPanel();
@@ -30,7 +31,6 @@ ImageIcon TitleIcon = new ImageIcon("Beach.jpg");
 		Intro.add(Title);
 		panel.add(Intro);
 
-		
 		//write your code above
 		
 		return panel;
