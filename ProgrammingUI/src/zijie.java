@@ -6,15 +6,19 @@ public class zijie
 {
 	public static JPanel newPanel()
 	{ 
+		// Main Panel
 		JPanel panel = new JPanel(); 
 		panel.setPreferredSize(new Dimension(1050, 625));
 		panel.setBackground(main.lightgreen);
 		panel.setLayout(new FlowLayout());
+				
+		//write your code below
 		
-		JLabel myLabel = new JLabel("Write your code  here, Zi Jie");
-		panel.add(myLabel);
+		JPanel banner = new JPanel();
+		banner.setBackground(main.grey);
+		banner.setPreferredSize(new Dimension(1050, 300));
 		
-		//write your code below 
+		panel.add(banner);
 		
 		//write your code above
 		
