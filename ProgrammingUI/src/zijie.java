@@ -37,13 +37,14 @@ public class zijie
 		Reason.setBackground(Color.decode("#ddefe3"));
 		Reason.add(ReasonText);
 		
+		
+		// Inserting text into Information Panel
 		JLabel information = new JLabel();
 		information.setText(("<html><br/>Trees contribute to clean the air we breathe,<br/>filter the water we drink, and support over<br/>"
 						   + "80% of the world's terrestrial biodiversity.<br/>Over 1.6 billion people rely on forests for<br/>employment, and forests absorb dangerous" 
 						   + "<br/>carbon from the atmosphere.</html>"));
 		information.setFont(new Font("Verdana", Font.PLAIN, 16));
 		infoPanel.setBackground(Color.decode("#ddefe3"));
-		
 		infoPanel.add(Reason, BorderLayout.NORTH);
 		infoPanel.add(information);
 		
