@@ -76,7 +76,8 @@ public class zijie
 		return panel;
 	}
 	
-	public static JPanel plantTree(String desc, String imgSrc) {
+	public static JPanel plantTree(String desc, String imgSrc) 
+	{
 		
 		// Creation of the main Donation Panel
 		JPanel donationPanel = new JPanel();
@@ -109,7 +110,8 @@ public class zijie
 		donationPanel.add(msgPanel, BorderLayout.SOUTH);
 		
 		// For function of Button
-		donationPanel.addMouseListener(new MouseAdapter() {
+		donationPanel.addMouseListener(new MouseAdapter() 
+		{
 			public void mouseEntered(MouseEvent e) 
 			{ 
 				donationmsg.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -124,6 +126,6 @@ public class zijie
 		
 		return donationPanel;
 	
-}
+	}
 
 }
