@@ -14,6 +14,11 @@ public class zijie
 				
 		//write your code below
 		
+		// Creation of a new panel for better organisation
+		JPanel southernPanel = new JPanel();
+		southernPanel.setPreferredSize(new Dimension(950, 410));
+		southernPanel.setBackground(Color.decode("#ddefe3"));
+		
 		// Image for Banner
 		ImageIcon image = new ImageIcon("ProgrammingUI/src/zjBanner.jpg");
 		
@@ -49,7 +54,7 @@ public class zijie
 		JPanel DonationPanel = new JPanel();
 		DonationPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 300, 0));
 		DonationPanel.setBackground(Color.decode("#ddefe3"));
-		DonationPanel.setPreferredSize(new Dimension(1000, 300));
+		DonationPanel.setPreferredSize(new Dimension(260, 700));
 		
 		// Creation of panel for donation
 		JPanel plantingTrees = zijie.plantTree("Plant your tree today!", "ProgrammingUI/src/PlantingTree.jpg");
@@ -58,18 +63,22 @@ public class zijie
 		
 		// Creation of panel for Donor List
 		JPanel Donors = new JPanel();
-		Donors.setPreferredSize(new Dimension(300, 300));
+		Donors.setPreferredSize(new Dimension(380, 700));
 		Donors.setBackground(Color.decode("#ddefe3"));
 		
 		JLabel DonorList = new JLabel();
 		
-		Donors.add(DonorList, BorderLayout.CENTER);
+		Donors.add(DonorList);
 		
 		// Adding the panels into the Main Panel
+		southernPanel.add(infoPanel, BorderLayout.WEST);
+		southernPanel.add(DonationPanel);
+		southernPanel.add(Donors, BorderLayout.EAST);
 		panel.add(zjBanner, BorderLayout.NORTH);
-		panel.add(infoPanel, BorderLayout.WEST);
+		panel.add(southernPanel, BorderLayout.SOUTH);
+		/* panel.add(infoPanel, BorderLayout.WEST);
 		panel.add(DonationPanel);
-		panel.add(Donors, BorderLayout.EAST);
+		panel.add(Donors, BorderLayout.EAST); */
 		
 		//write your code above
 		
