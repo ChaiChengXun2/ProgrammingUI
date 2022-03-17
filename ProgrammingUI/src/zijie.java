@@ -44,7 +44,9 @@ public class zijie
 		JLabel information = new JLabel();
 		information.setText(("<html><br/>Trees contribute to clean the air we breathe,<br/>filter the water we drink, and support over<br/>"
 						   + "80% of the world's terrestrial biodiversity.<br/>Over 1.6 billion people rely on forests for<br/>employment, and forests absorb dangerous" 
-						   + "<br/>carbon from the atmosphere.</html>"));
+						   + "<br/>carbon from the atmosphere."
+						   + "<br/><br/>With only as little as $1, you can plant your<br/>very own tree. "
+						   + "Contribute to the effort today!</html>"));
 		information.setFont(new Font("Verdana", Font.PLAIN, 16));
 		infoPanel.setBackground(Color.decode("#ddefe3"));
 		infoPanel.add(Reason, BorderLayout.NORTH);
@@ -63,12 +65,49 @@ public class zijie
 		
 		// Creation of panel for Donor List
 		JPanel Donors = new JPanel();
-		Donors.setPreferredSize(new Dimension(380, 700));
-		Donors.setBackground(Color.decode("#ddefe3"));
+		Donors.setPreferredSize(new Dimension(380, 618));
+		Donors.setBackground(main.darkgreen);
+		FlowLayout layout = (FlowLayout)Donors.getLayout();
+		layout.setVgap(0);
 		
-		JLabel DonorList = new JLabel();
+		JPanel DonorList = new JPanel();
+		DonorList.setPreferredSize(new Dimension(380, 75));
+		DonorList.setBackground(Color.decode("#a8d8cd"));
+		
+		JLabel list = new JLabel();
+		list.setText("<html><br/><br/>Donor List<html/>");
+		list.setFont(new Font("Verdana", Font.BOLD, 16));
+		list.setForeground(main.darkgreen);
+		
+		DonorList.add(list);
+		
+		JPanel names = new JPanel();
+		names.setPreferredSize(new Dimension(380, 600));
+		names.setBackground(main.darkgreen);
+		
+		JPanel DonorList1 = new JPanel();
+		DonorList1.setPreferredSize(new Dimension(370, 75));
+		DonorList1.setBackground(Color.decode("#e0fdff"));
+		
+		JPanel DonorList2 = new JPanel();
+		DonorList2.setPreferredSize(new Dimension(370, 75));
+		DonorList2.setBackground(Color.decode("#e0fdff"));
+		
+		JPanel DonorList3 = new JPanel();
+		DonorList3.setPreferredSize(new Dimension(370, 75));
+		DonorList3.setBackground(Color.decode("#e0fdff"));
+		
+		JPanel DonorList4 = new JPanel();
+		DonorList4.setPreferredSize(new Dimension(380, 85));
+		DonorList4.setBackground(Color.decode("#ddefe3"));
+		
+		names.add(DonorList1);
+		names.add(DonorList2);
+		names.add(DonorList3);
+		names.add(DonorList4);
 		
 		Donors.add(DonorList);
+		Donors.add(names);
 		
 		// Adding the panels into the Main Panel
 		southernPanel.add(infoPanel, BorderLayout.WEST);
@@ -76,9 +115,55 @@ public class zijie
 		southernPanel.add(Donors, BorderLayout.EAST);
 		panel.add(zjBanner, BorderLayout.NORTH);
 		panel.add(southernPanel, BorderLayout.SOUTH);
-		/* panel.add(infoPanel, BorderLayout.WEST);
-		panel.add(DonationPanel);
-		panel.add(Donors, BorderLayout.EAST); */
+		
+		// Adding the functionality to the donation button
+		plantingTrees.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				
+				JFrame DonationFrame = new JFrame();
+				DonationFrame.setTitle("Donate to Plant Your Tree");
+				
+				JPanel donationMain = new JPanel();
+				donationMain.setPreferredSize(new Dimension(700, 380));
+				donationMain.setLayout(new FlowLayout(FlowLayout.CENTER));
+				
+				if (!(login.isLogin)) {
+					
+					JLabel unregistered = new JLabel("Please login to make a donation");
+					unregistered.setFont(new Font("Verdana", Font.PLAIN, 16));
+					unregistered.setHorizontalAlignment(JLabel.CENTER);
+					unregistered.setPreferredSize(new Dimension(400, 50));
+					unregistered.setForeground(Color.red);
+				
+					donationMain.add(unregistered);
+				
+					DonationFrame.setSize(300,100);
+					
+				} else {
+					
+				JPanel donationImage = new JPanel();
+				donationImage.add(new JLabel(new ImageIcon("ProgrammingUI/src/Planting.jpg")));
+				donationImage.setPreferredSize(new Dimension(350, 250));
+				
+				JLabel appreciation = new JLabel("<html>We would like to express our gratitude to you for supporting<br/>the effort.</html>");
+				appreciation.setFont(new Font("Verdana", Font.PLAIN, 18));
+				appreciation.setHorizontalAlignment(JLabel.CENTER);
+				appreciation.setPreferredSize(new Dimension(350,75));
+				
+				donationMain.add(donationImage);
+				donationMain.add(appreciation);
+				
+				DonationFrame.setSize(800,500);
+				
+				}
+				
+			DonationFrame.add(donationMain);
+			DonationFrame.setLocationRelativeTo(null);
+			DonationFrame.setVisible(true);
+				
+			}
+			
+		});
 		
 		//write your code above
 		
@@ -118,19 +203,20 @@ public class zijie
 		donationPanel.add(imagePanel, BorderLayout.NORTH);
 		donationPanel.add(msgPanel, BorderLayout.SOUTH);
 		
-		// For function of Button
+		// For button's reaction when hovering through it
 		donationPanel.addMouseListener(new MouseAdapter() 
 		{
-			public void mouseEntered(MouseEvent e) 
-			{ 
+			public void mouseEntered(MouseEvent e) {
+				
 				donationmsg.setFont(new Font("Verdana", Font.BOLD, 12));
-				imagePanel.setBackground(Color.decode("#ddefe3"));
+				
 			}
-			public void mouseExited(MouseEvent e) 
-			{ 
+			public void mouseExited(MouseEvent e) { 
+				
 				donationmsg.setFont(new Font("Verdana", Font.PLAIN, 12));
-				imagePanel.setBackground(Color.decode("#ddefe3"));
+				
 			}
+			
 		});
 		
 		return donationPanel;
