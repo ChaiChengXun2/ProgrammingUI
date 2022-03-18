@@ -20,10 +20,11 @@ public class zijie
 		southernPanel.setBackground(Color.decode("#ddefe3"));
 		
 		// Image for Banner
-		ImageIcon image = new ImageIcon("ProgrammingUI/src/zjBanner.jpg");
+		ImageIcon image = new ImageIcon("ProgrammingUI/src/TreesEDITED.jpg");
 		
 		// Inserting image into banner
 		JLabel zjBanner = new JLabel(image);
+		zjBanner.setPreferredSize(new Dimension(900, 250));
 		
 		// Creation of Information Panel
 		JPanel infoPanel = new JPanel();
@@ -244,8 +245,29 @@ public class zijie
 				appreciation.setHorizontalAlignment(JLabel.CENTER);
 				appreciation.setPreferredSize(new Dimension(350,75));
 				
+				JPanel donationAMT = new JPanel();
+				donationAMT.setPreferredSize(new Dimension(350, 250));
+				
+					ButtonGroup amountGroup1 = new ButtonGroup();
+					JRadioButton amount1 = new JRadioButton("5 Trees", true);
+					JRadioButton amount2 = new JRadioButton("20 Trees", false);
+					JRadioButton amount3 = new JRadioButton("50 Trees", false);
+					JRadioButton amount4 = new JRadioButton("100 Trees", false);
+				
+					amountGroup1.add(amount1);
+					amountGroup1.add(amount2);
+					amountGroup1.add(amount3);
+					amountGroup1.add(amount4);
+					
+					donationAMT.add(amount1);
+					donationAMT.add(amount2);
+					donationAMT.add(amount3);
+					donationAMT.add(amount4);
+				
+				
 				donationMain.add(donationImage);
 				donationMain.add(appreciation);
+				donationMain.add(donationAMT, BorderLayout.SOUTH);
 				
 				DonationFrame.setSize(800,500);
 				
