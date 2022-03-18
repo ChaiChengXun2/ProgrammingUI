@@ -239,6 +239,7 @@ public class chengxun
 		JLabel text = new JLabel(description, SwingConstants.HORIZONTAL);
 		text.setFont(new Font("Verdana", Font.PLAIN, 12));
 		text.setForeground(main.lightgreen);
+		//text.setForeground(Color.decode("#caebd7"));
 		
 		// adding everything into main panel and return the panel
 		textPanel.add(text, BorderLayout.CENTER);
@@ -254,7 +255,7 @@ public class chengxun
 			}
 			public void mouseExited(MouseEvent e) 
 			{ 
-				text.setFont(new Font("Verdana", Font.PLAIN, 12));
+				text.setFont(new Font("Verdana", Font.PLAIN, 13));
 				picturePanel.setBackground(main.grey);
 			}
 		});
