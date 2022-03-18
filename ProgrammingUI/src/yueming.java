@@ -28,11 +28,19 @@ public class yueming
 		JLabel sloganTextmain= new JLabel();
 		sloganTextmain.setText("<html><br/>POWERING <br/>COMMUNITIES"
 				+ "<br/>FOR ZERO<br/>HUNGER </html>");
-		sloganTextmain.setFont(new Font("League Spartan",Font.BOLD,32));
+		sloganTextmain.setFont(new Font("League Spartan",Font.BOLD,30));
 		sloganTextmain.setForeground(Color.decode("#009c1f"));
+		
+		JLabel DonationR = new JLabel();
+		DonationR.setText("<html><br/>COVID-19 has increased food <br/>insecurity to its highest levels in"
+				+ "<br/>decades. The Global FoodBanking<br/>Network (GFN) helps frontline food"
+				+ "<br/> banks respond to immediate needs <br/>while powering a community-driven"
+				+ "<br/>response that builds resilience for <br/> the future.</html>");//paragraph text for donation reason
+		DonationR.setFont(new Font("Alice",Font.PLAIN, 20));
+		DonationR.setForeground(Color.decode("#00bd26"));
 				     
 		
-		panel.add(sloganTextmain,BorderLayout.WEST);
+		
 		JLabel Gmeal = new JLabel(Givemeal);
 		JLabel WDonate = new JLabel(Whydonate);
 		JLabel NHunger = new JLabel(noHungerpic);
@@ -47,7 +55,10 @@ public class yueming
 		
 		JPanel Cen = new JPanel(); //center panel created
 		Cen.setBackground(Color.decode("#caebd7"));
-		Cen.add(Gmeal,BorderLayout.NORTH);
+		Cen.setLayout(new BorderLayout());
+		Cen.add(Gmeal,BorderLayout.CENTER);
+		Cen.add(sloganTextmain,BorderLayout.WEST);
+		Cen.add(DonationR,BorderLayout.EAST);
 		
 		panel.add(Cen,BorderLayout.CENTER);
 		
@@ -58,10 +69,11 @@ public class yueming
 		Nor.add(FBPic,BorderLayout.WEST);
 		Nor.add(NHunger,BorderLayout.CENTER);
 		Nor.add(WDonate,BorderLayout.EAST);
-		panel.add(Nor,BorderLayout.NORTH);
+		panel.add(Nor,BorderLayout.NORTH); //Nor panel becomes the top part of main panel
 		
 		JPanel Rig = new JPanel(); //dummy right panel for centerring?
 		Rig.setBackground(Color.decode("#caebd7"));
+		
 		
 		panel.add(Rig,BorderLayout.EAST);
 				
