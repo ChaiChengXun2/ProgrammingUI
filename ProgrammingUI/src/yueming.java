@@ -6,38 +6,42 @@ public class yueming
 {
 	public static JPanel newPanel()
 	{ 
-		ImageIcon FBing = new ImageIcon("ProgrammingUI/src/Global-FoodBanking.png");
+		ImageIcon FBimg = new ImageIcon("ProgrammingUI/src/Global-FoodBanking.png");
+		ImageIcon Givemeal = new ImageIcon("ProgrammingUI\\src\\GiveAmeal.jfif");
+		ImageIcon Whydonate = new ImageIcon("ProgrammingUI\\src\\whydonate.png");
 		
 		JPanel panel = new JPanel(); 
-		panel.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4,Color.decode("#69a2ff")));
 		panel.setPreferredSize(new Dimension(1050, 625));
-		panel.setBackground(Color.decode("#caebd7")); //hex color codes require Color.decode to work
-		panel.setLayout(new GridLayout(4,1,1,1));
+		panel.setBackground(Color.decode("#caebd7"));
+		//hex color codes require Color.decode to work
+		panel.setLayout(new FlowLayout());
 		
-		JLabel FBPic = new JLabel();
-		FBPic.setIcon(FBing);
-		FBPic.setText("POWERING COMMUNITIES FOR ZERO HUNGER");
-		FBPic.setVerticalAlignment(JLabel.TOP);
-		FBPic.setHorizontalAlignment(JLabel.CENTER);
+		
 
 		
 		
 		//panel.add(myLabel, BorderLayout.CENTER); // i am not sure how to center the message still
 		
 		//write your code below 
-		JPanel pain1 = new JPanel();
-		JPanel pain2 = new JPanel();
+		JLabel sloganTextmain = new JLabel(); // this is for the second half of the slogan text so that it can have a diffrennt font
 		
-		pain1.setBackground(Color.YELLOW);
-		pain1.setBounds(0,0,300,300);
-		pain1.setLayout(new FlowLayout());
-		pain1.add(FBPic);
-		panel.add(pain1);
 		
-		pain2.setBackground(Color.LIGHT_GRAY);
-		pain2.setBounds(0,300,300,300);
-		pain2.setLayout(new FlowLayout());
-		panel.add(pain2);
+		JLabel FBPic = new JLabel(FBimg);
+		FBPic.setHorizontalTextPosition(JLabel.CENTER);
+		FBPic.setVerticalTextPosition(JLabel.BOTTOM);
+		FBPic.setText("<html>POWERING <br/>COMMUNITIES </html>"); //TOP HALF OF THE SLOGAN,meant to be diffrent font
+		FBPic.setFont(new Font("League Spartan",Font.BOLD, 36));
+	    FBPic.setForeground(Color.green);
+	    FBPic.setBounds(0,0,350,150);
+		
+		
+		
+		JPanel NW = new JPanel();
+		//northwest panel creation
+		
+		panel.add(FBPic,0,0);
+				
+
 		
 		
 		//write your code above
