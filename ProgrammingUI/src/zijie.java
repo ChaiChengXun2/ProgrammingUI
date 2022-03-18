@@ -36,17 +36,17 @@ public class zijie
 		
 		// Inserting text to Reason panel
 		JLabel ReasonText = new JLabel();
-		ReasonText.setText(("<html><br/><br/>Why Plant Trees?</html>"));
+		ReasonText.setText(("<html><br><br>Why Plant Trees?</html>"));
 		ReasonText.setFont(new Font("Open Sans", Font.BOLD, 24));
 		Reason.setBackground(Color.decode("#ddefe3"));
 		Reason.add(ReasonText);
 		
 		// Inserting text into Information Panel
 		JLabel information = new JLabel();
-		information.setText(("<html><br/>Trees contribute to clean the air we breathe,<br/>filter the water we drink, and support over<br/>"
-						   + "80% of the world's terrestrial biodiversity.<br/>Over 1.6 billion people rely on forests for<br/>employment, and forests absorb dangerous" 
-						   + "<br/>carbon from the atmosphere."
-						   + "<br/><br/>With only as little as $1, you can plant your<br/>very own tree. "
+		information.setText(("<html><br>Trees contribute to clean the air we breathe,<br>filter the water we drink, and support over<br>"
+						   + "80% of the world's terrestrial biodiversity.<br>Over 1.6 billion people rely on forests for<br>employment, and forests absorb dangerous" 
+						   + "<br>carbon from the atmosphere."
+						   + "<br><br>With only as little as $1, you can plant your<br>very own tree. "
 						   + "Contribute to the effort today!</html>"));
 		information.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 16));
 		infoPanel.setBackground(Color.decode("#ddefe3"));
@@ -76,7 +76,7 @@ public class zijie
 		DonorList.setBackground(Color.decode("#a8d8cd"));
 		
 		JLabel list = new JLabel();
-		list.setText("<html><br/>Donor List<html/>");
+		list.setText("<html><br>Donor List</html>");
 		list.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 20));
 		list.setForeground(main.darkgreen);
 		
@@ -97,11 +97,11 @@ public class zijie
 		
 		JLabel user1 = new JLabel(new ImageIcon("ProgrammingUI/src/UserIcon1.png"));
 		
-		JLabel name1 = new JLabel("<html><br/>John Smith<html/>");
+		JLabel name1 = new JLabel("<html><br>John Smith</html>");
 		name1.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
 		name1.setForeground(main.darkgreen);
 		
-		JLabel donation1 = new JLabel("<html><br/>$15<html/>");
+		JLabel donation1 = new JLabel("<html><br>$15</html>");
 		donation1.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
 		donation1.setForeground(main.darkgreen);
 		
@@ -131,11 +131,11 @@ public class zijie
 		
 		JLabel user2 = new JLabel(new ImageIcon("ProgrammingUI/src/UserIcon1.png"));
 		
-		JLabel name2 = new JLabel("<html><br/>Denis Zalutskiy<html/>");
+		JLabel name2 = new JLabel("<html><br>Denis Zalutskiy</html>");
 		name2.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
 		name2.setForeground(main.darkgreen);
 		
-		JLabel donation2 = new JLabel("<html><br/>$5<html/>");
+		JLabel donation2 = new JLabel("<html><br>$5</html>");
 		donation2.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
 		donation2.setForeground(main.darkgreen);
 		
@@ -165,11 +165,11 @@ public class zijie
 		
 		JLabel user3 = new JLabel(new ImageIcon("ProgrammingUI/src/UserIcon1.png"));
 		
-		JLabel name3 = new JLabel("<html><br/>Charlotte Williams<html/>");
+		JLabel name3 = new JLabel("<html><br>Charlotte Williams</html>");
 		name3.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
 		name3.setForeground(main.darkgreen);
 		
-		JLabel donation3 = new JLabel("<html><br/>$100<html/>");
+		JLabel donation3 = new JLabel("<html><br>$100</html>");
 		donation3.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
 		donation3.setForeground(main.darkgreen);
 		
@@ -240,7 +240,7 @@ public class zijie
 				donationImage.add(new JLabel(new ImageIcon("ProgrammingUI/src/Planting.jpg")));
 				donationImage.setPreferredSize(new Dimension(350, 250));
 				
-				JLabel appreciation = new JLabel("<html>We would like to express our gratitude to you for supporting<br/>the effort.</html>");
+				JLabel appreciation = new JLabel("<html>We would like to express our gratitude to you for supporting<br>the effort.</html>");
 				appreciation.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 18));
 				appreciation.setHorizontalAlignment(JLabel.CENTER);
 				appreciation.setPreferredSize(new Dimension(350,75));
