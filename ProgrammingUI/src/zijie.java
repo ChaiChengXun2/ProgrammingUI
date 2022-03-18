@@ -27,16 +27,16 @@ public class zijie
 		
 		// Creation of Information Panel
 		JPanel infoPanel = new JPanel();
-		infoPanel.setPreferredSize(new Dimension(380, 700));
+		infoPanel.setPreferredSize(new Dimension(340, 700));
 		
 		// Creation of Reason panel
 		JPanel Reason = new JPanel();
-		Reason.setPreferredSize(new Dimension(380, 100));
+		Reason.setPreferredSize(new Dimension(340, 100));
 		
 		// Inserting text to Reason panel
 		JLabel ReasonText = new JLabel();
-		ReasonText.setText(("<html><br/><br/><br/>Why Plant Trees?</html>"));
-		ReasonText.setFont(new Font("Verdana", Font.BOLD, 18));
+		ReasonText.setText(("<html><br/><br/>Why Plant Trees?</html>"));
+		ReasonText.setFont(new Font("Open Sans", Font.BOLD, 24));
 		Reason.setBackground(Color.decode("#ddefe3"));
 		Reason.add(ReasonText);
 		
@@ -47,7 +47,7 @@ public class zijie
 						   + "<br/>carbon from the atmosphere."
 						   + "<br/><br/>With only as little as $1, you can plant your<br/>very own tree. "
 						   + "Contribute to the effort today!</html>"));
-		information.setFont(new Font("Verdana", Font.PLAIN, 16));
+		information.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 16));
 		infoPanel.setBackground(Color.decode("#ddefe3"));
 		infoPanel.add(Reason, BorderLayout.NORTH);
 		infoPanel.add(information);
@@ -56,7 +56,7 @@ public class zijie
 		JPanel DonationPanel = new JPanel();
 		DonationPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 300, 0));
 		DonationPanel.setBackground(Color.decode("#ddefe3"));
-		DonationPanel.setPreferredSize(new Dimension(260, 700));
+		DonationPanel.setPreferredSize(new Dimension(300, 700));
 		
 		// Creation of panel for donation
 		JPanel plantingTrees = zijie.plantTree("Plant your tree today!", "ProgrammingUI/src/PlantingTree.jpg");
@@ -75,8 +75,8 @@ public class zijie
 		DonorList.setBackground(Color.decode("#a8d8cd"));
 		
 		JLabel list = new JLabel();
-		list.setText("<html><br/><br/>Donor List<html/>");
-		list.setFont(new Font("Verdana", Font.BOLD, 16));
+		list.setText("<html><br/>Donor List<html/>");
+		list.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 20));
 		list.setForeground(main.darkgreen);
 		
 		DonorList.add(list);
@@ -85,17 +85,111 @@ public class zijie
 		names.setPreferredSize(new Dimension(380, 600));
 		names.setBackground(main.darkgreen);
 		
+		FlowLayout listLayout = (FlowLayout)DonorList.getLayout();
+		listLayout.setVgap(0);
+		listLayout.setHgap(0);
+		
 		JPanel DonorList1 = new JPanel();
 		DonorList1.setPreferredSize(new Dimension(370, 75));
 		DonorList1.setBackground(Color.decode("#e0fdff"));
+		DonorList1.setLayout(listLayout);
+		
+		JLabel user1 = new JLabel(new ImageIcon("ProgrammingUI/src/UserIcon1.png"));
+		
+		JLabel name1 = new JLabel("<html><br/>John Smith<html/>");
+		name1.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
+		name1.setForeground(main.darkgreen);
+		
+		JLabel donation1 = new JLabel("<html><br/>$15<html/>");
+		donation1.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
+		donation1.setForeground(main.darkgreen);
+		
+		JPanel icon1 = new JPanel();
+		icon1.setPreferredSize(new Dimension(75, 75));
+		icon1.setBackground(Color.decode("#ddefe3"));
+		icon1.add(user1);
+		
+		JPanel namepnl1 = new JPanel();
+		namepnl1.setPreferredSize(new Dimension(220, 75));
+		namepnl1.setBackground(Color.decode("#e0fdff"));
+		namepnl1.add(name1);
+		
+		JPanel donationpnl1 = new JPanel();
+		donationpnl1.setPreferredSize(new Dimension(75, 75));
+		donationpnl1.setBackground(Color.decode("#c2fbff"));
+		donationpnl1.add(donation1);
+		
+		DonorList1.add(icon1);
+		DonorList1.add(namepnl1);
+		DonorList1.add(donationpnl1);
 		
 		JPanel DonorList2 = new JPanel();
 		DonorList2.setPreferredSize(new Dimension(370, 75));
 		DonorList2.setBackground(Color.decode("#e0fdff"));
+		DonorList2.setLayout(listLayout);
+		
+		JLabel user2 = new JLabel(new ImageIcon("ProgrammingUI/src/UserIcon1.png"));
+		
+		JLabel name2 = new JLabel("<html><br/>Denis Zalutskiy<html/>");
+		name2.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
+		name2.setForeground(main.darkgreen);
+		
+		JLabel donation2 = new JLabel("<html><br/>$5<html/>");
+		donation2.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
+		donation2.setForeground(main.darkgreen);
+		
+		JPanel icon2 = new JPanel();
+		icon2.setPreferredSize(new Dimension(75, 75));
+		icon2.setBackground(Color.decode("#ddefe3"));
+		icon2.add(user2);
+		
+		JPanel namepnl2 = new JPanel();
+		namepnl2.setPreferredSize(new Dimension(220, 75));
+		namepnl2.setBackground(Color.decode("#e0fdff"));
+		namepnl2.add(name2);
+		
+		JPanel donationpnl2 = new JPanel();
+		donationpnl2.setPreferredSize(new Dimension(75, 75));
+		donationpnl2.setBackground(Color.decode("#c2fbff"));
+		donationpnl2.add(donation2);
+		
+		DonorList2.add(icon2);
+		DonorList2.add(namepnl2);
+		DonorList2.add(donationpnl2);
 		
 		JPanel DonorList3 = new JPanel();
 		DonorList3.setPreferredSize(new Dimension(370, 75));
 		DonorList3.setBackground(Color.decode("#e0fdff"));
+		DonorList3.setLayout(listLayout);
+		
+		JLabel user3 = new JLabel(new ImageIcon("ProgrammingUI/src/UserIcon1.png"));
+		
+		JLabel name3 = new JLabel("<html><br/>Charlotte Williams<html/>");
+		name3.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
+		name3.setForeground(main.darkgreen);
+		
+		JLabel donation3 = new JLabel("<html><br/>$100<html/>");
+		donation3.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 16));
+		donation3.setForeground(main.darkgreen);
+		
+		JPanel icon3 = new JPanel();
+		icon3.setPreferredSize(new Dimension(75, 75));
+		icon3.setBackground(Color.decode("#ddefe3"));
+		icon3.add(user3);
+		
+		JPanel namepnl3 = new JPanel();
+		namepnl3.setPreferredSize(new Dimension(220, 75));
+		namepnl3.setBackground(Color.decode("#e0fdff"));
+		namepnl3.add(name3);
+		
+		JPanel donationpnl3 = new JPanel();
+		donationpnl3.setPreferredSize(new Dimension(75, 75));
+		donationpnl3.setBackground(Color.decode("#c2fbff"));
+		donationpnl3.add(donation3);
+		
+		DonorList3.add(icon3);
+		DonorList3.add(namepnl3);
+		DonorList3.add(donationpnl3);
 		
 		JPanel DonorList4 = new JPanel();
 		DonorList4.setPreferredSize(new Dimension(380, 85));
@@ -146,7 +240,7 @@ public class zijie
 				donationImage.setPreferredSize(new Dimension(350, 250));
 				
 				JLabel appreciation = new JLabel("<html>We would like to express our gratitude to you for supporting<br/>the effort.</html>");
-				appreciation.setFont(new Font("Verdana", Font.PLAIN, 18));
+				appreciation.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 18));
 				appreciation.setHorizontalAlignment(JLabel.CENTER);
 				appreciation.setPreferredSize(new Dimension(350,75));
 				
@@ -195,7 +289,7 @@ public class zijie
 		
 		// Inserting Text to msgPanel
 		JLabel donationmsg = new JLabel(desc, SwingConstants.HORIZONTAL);
-		donationmsg.setFont(new Font("Verdana", Font.PLAIN, 12));
+		donationmsg.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 15));
 		donationmsg.setForeground(main.lightgreen);
 		
 		// Adding Image and Donation Message panels to the main Donation Panel
@@ -208,12 +302,12 @@ public class zijie
 		{
 			public void mouseEntered(MouseEvent e) {
 				
-				donationmsg.setFont(new Font("Verdana", Font.BOLD, 12));
+				donationmsg.setFont(new Font("Open Sauce SemiBold", Font.BOLD, 15));
 				
 			}
 			public void mouseExited(MouseEvent e) { 
 				
-				donationmsg.setFont(new Font("Verdana", Font.PLAIN, 12));
+				donationmsg.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 15));
 				
 			}
 			
