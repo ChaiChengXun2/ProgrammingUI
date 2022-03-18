@@ -66,6 +66,10 @@ public class merch {
 		
 		// event handling
 		confirmPanel.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e)
+			{ 
+				mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
+			}
 			public void mouseEntered(MouseEvent e) 
 			{ 
 				confirm.setFont(new Font("Verdana", Font.BOLD, 12));
@@ -78,6 +82,10 @@ public class merch {
 			}
 		});
 		cancelPanel.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e)
+			{ 
+				mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
+			}
 			public void mouseEntered(MouseEvent e) 
 			{ 
 				cancel.setFont(new Font("Verdana", Font.BOLD, 12));
