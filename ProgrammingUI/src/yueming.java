@@ -6,38 +6,66 @@ public class yueming
 {
 	public static JPanel newPanel()
 	{ 
-		ImageIcon FBing = new ImageIcon("ProgrammingUI/src/Global-FoodBanking.png");
-		
+		ImageIcon FBimg = new ImageIcon("ProgrammingUI/src/Global-FoodBanking.png");
+		ImageIcon Givemeal = new ImageIcon("ProgrammingUI\\src\\GiveAmeal.jfif");
+		ImageIcon Whydonate = new ImageIcon("ProgrammingUI\\src\\whydonate.png");
+		ImageIcon noHungerpic = new ImageIcon("ProgrammingUI\\src\\no-Hunger.png");
 		JPanel panel = new JPanel(); 
-		panel.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4,Color.decode("#69a2ff")));
 		panel.setPreferredSize(new Dimension(1050, 625));
-		panel.setBackground(Color.decode("#caebd7")); //hex color codes require Color.decode to work
-		panel.setLayout(new GridLayout(4,1,1,1));
+		panel.setBackground(Color.decode("#caebd7"));
+		//hex color codes require Color.decode to work
+		panel.setLayout(new BorderLayout());
 		
-		JLabel FBPic = new JLabel();
-		FBPic.setIcon(FBing);
-		FBPic.setText("POWERING COMMUNITIES FOR ZERO HUNGER");
-		FBPic.setVerticalAlignment(JLabel.TOP);
-		FBPic.setHorizontalAlignment(JLabel.CENTER);
+		
 
 		
 		
 		//panel.add(myLabel, BorderLayout.CENTER); // i am not sure how to center the message still
 		
 		//write your code below 
-		JPanel pain1 = new JPanel();
-		JPanel pain2 = new JPanel();
 		
-		pain1.setBackground(Color.YELLOW);
-		pain1.setBounds(0,0,300,300);
-		pain1.setLayout(new FlowLayout());
-		pain1.add(FBPic);
-		panel.add(pain1);
 		
-		pain2.setBackground(Color.LIGHT_GRAY);
-		pain2.setBounds(0,300,300,300);
-		pain2.setLayout(new FlowLayout());
-		panel.add(pain2);
+		JLabel sloganTextmain= new JLabel();
+		sloganTextmain.setText("<html><br/>POWERING <br/>COMMUNITIES"
+				+ "<br/>FOR ZERO<br/>HUNGER </html>");
+		sloganTextmain.setFont(new Font("League Spartan",Font.BOLD,32));
+		sloganTextmain.setForeground(Color.decode("#009c1f"));
+				     
+		
+		panel.add(sloganTextmain,BorderLayout.WEST);
+		JLabel Gmeal = new JLabel(Givemeal);
+		JLabel WDonate = new JLabel(Whydonate);
+		JLabel NHunger = new JLabel(noHungerpic);
+		
+		
+		
+		
+		
+		JLabel FBPic = new JLabel(FBimg);
+	    FBPic.setForeground(Color.decode("#009c1f"));
+	    
+		
+		JPanel Cen = new JPanel(); //center panel created
+		Cen.setBackground(Color.decode("#caebd7"));
+		Cen.add(Gmeal,BorderLayout.NORTH);
+		
+		panel.add(Cen,BorderLayout.CENTER);
+		
+		JPanel Nor = new JPanel();
+	    Nor.setLayout(new BorderLayout());//north panel
+		
+		Nor.setBackground(Color.decode("#68f785"));
+		Nor.add(FBPic,BorderLayout.WEST);
+		Nor.add(NHunger,BorderLayout.CENTER);
+		Nor.add(WDonate,BorderLayout.EAST);
+		panel.add(Nor,BorderLayout.NORTH);
+		
+		JPanel Rig = new JPanel(); //dummy right panel for centerring?
+		Rig.setBackground(Color.decode("#caebd7"));
+		
+		panel.add(Rig,BorderLayout.EAST);
+				
+
 		
 		
 		//write your code above
@@ -46,4 +74,4 @@ public class yueming
 		return panel;
 	}
 }
-//overall,i still dont know what the hell i am doing
+
