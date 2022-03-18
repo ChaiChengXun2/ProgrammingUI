@@ -113,6 +113,8 @@ public class register
 		largePanel.add(picturePanel, BorderLayout.NORTH);
 		largePanel.add(contentPanel, BorderLayout.CENTER);
 		
+		panel.add(largePanel);
+		
 		// event handling for register button
 		registerLbl.addMouseListener(new MouseAdapter() 
 		{
@@ -165,9 +167,8 @@ public class register
 			}
 		});
 		
-		panel.add(largePanel);
-		
 		//write your code above
+		panel.add(largePanel);
 		
 		return panel;
 	}

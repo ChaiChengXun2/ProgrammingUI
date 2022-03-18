@@ -4,6 +4,71 @@ import java.awt.event.*;
 
 public class chengxun 
 {
+	
+	static String ty = "<html>"
+							+ "<body>"
+								+ "<p style=\"font-weight: plain; text-align: center; font-size:17px;\">Thank you for choosing NoPoverty</p>"
+							+ "</body>"
+						+ "</html>";
+	static String registerAccount =  "<html>"
+										+ "<body>"
+											+ "<p style=\"font-weight: plain; text-align: center; font-size:17px;\">Please login to donate</p>"
+										+ "</body>"
+									+ "</html>";
+	static String donateNote =  "<html>"
+								+ "<body>"
+									+ "<p style=\"font-weight: plain; text-align: center; font-size:17px;\">You can still donate anonymously after registering</p>"
+								+ "</body>"
+							+ "</html>";
+	static String procedureTxt =  "<html>"
+									+ "<body>"
+										+ "<p style=\"font-weight: plain; text-align: center; font-size:17px;\">Set up procedure...</p>"
+									+ "</body>"
+								+ "</html>";
+	static void donationRegistration(MouseEvent e)
+	{ 
+		JFrame procedureFrame = new JFrame(); 
+		procedureFrame.setTitle("Donation Procedure");
+		
+		JPanel mainPanel = new JPanel(); 
+		mainPanel.setPreferredSize(new Dimension(700, 375));
+		mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		
+		JPanel picturePanel = new JPanel(); 
+		picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
+		picturePanel.setPreferredSize(new Dimension(250, 250));
+		
+		JLabel thankYou = new JLabel(ty);
+		thankYou.setHorizontalAlignment(JLabel.CENTER);
+		mainPanel.add(picturePanel);
+		mainPanel.add(thankYou);
+		
+		if (!(login.isLogin))
+		{
+			JLabel registerAcc = new JLabel(registerAccount);
+			JLabel note = new JLabel(donateNote);
+			
+			registerAcc.setHorizontalAlignment(JLabel.CENTER);
+			note.setHorizontalAlignment(JLabel.CENTER);
+			registerAcc.setForeground(Color.red);
+			note.setForeground(Color.red);
+			
+			mainPanel.add(note);
+			mainPanel.add(registerAcc);
+		}
+		else
+		{
+			JLabel procedure = new JLabel(procedureTxt);
+			procedure.setHorizontalAlignment(JLabel.CENTER);
+			mainPanel.add(procedure);
+		}
+		
+		procedureFrame.setSize(700, 375);
+		procedureFrame.add(mainPanel);
+		procedureFrame.setLocationRelativeTo(null);
+		procedureFrame.setVisible(true);
+	}
+	
 	public static JPanel newPanel()
 	{ 
 		// creation of main panel
@@ -17,7 +82,7 @@ public class chengxun
 		
 		// creation of content panel
 		JPanel contentPanel = new JPanel(); 
-		contentPanel.setBackground(main.grey);
+		contentPanel.setBackground(main.lightgreen);
 		contentPanel.setPreferredSize(new Dimension(1050, 315));
 		
 		JLabel cxBanner = new JLabel(banner);
@@ -45,166 +110,22 @@ public class chengxun
 		// event handlers
 		clothesCard.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
-			{ 
-				
-				JFrame procedureFrame = new JFrame(); 
-				procedureFrame.setTitle("Donation Procedure");
-				
-				JPanel mainPanel = new JPanel(); 
-				mainPanel.setPreferredSize(new Dimension(700, 375));
-				mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-				
-				JPanel picturePanel = new JPanel(); 
-				picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
-				picturePanel.setPreferredSize(new Dimension(250, 250));
-				
-				JLabel thankYou = new JLabel("Thank you for choosing NoPoverty");
-				thankYou.setFont(new Font("Verdana", Font.PLAIN, 20));
-				thankYou.setHorizontalAlignment(JLabel.CENTER);
-				thankYou.setPreferredSize(new Dimension(350, 35));
-				mainPanel.add(picturePanel);
-				mainPanel.add(thankYou);
-				
-				if (!(login.isLogin))
-				{
-					JLabel registerAcc = new JLabel("Please login to donate");
-					JLabel note = new JLabel("You can still choose to donate anonymously after registering");
-					
-					registerAcc.setFont(new Font("Verdana", Font.PLAIN, 20));
-					note.setFont(new Font("Verdana", Font.PLAIN, 20));
-					registerAcc.setHorizontalAlignment(JLabel.CENTER);
-					note.setHorizontalAlignment(JLabel.CENTER);
-					registerAcc.setPreferredSize(new Dimension(700, 35));
-					note.setPreferredSize(new Dimension(700, 35));
-					registerAcc.setForeground(Color.red);
-					note.setForeground(Color.red);
-					
-					mainPanel.add(note);
-					mainPanel.add(registerAcc);
-				}
-				else
-				{
-					JLabel procedure = new JLabel("Set Up Procedure...");
-					procedure.setFont(new Font("Verdana", Font.PLAIN, 20));
-					procedure.setHorizontalAlignment(JLabel.CENTER);
-					procedure.setPreferredSize(new Dimension(700, 35));
-					mainPanel.add(procedure);
-				}
-				
-				procedureFrame.setSize(700, 375);
-				procedureFrame.add(mainPanel);
-				procedureFrame.setLocationRelativeTo(null);
-				procedureFrame.setVisible(true);
+			{
+				donationRegistration(e); 
 			}
 		});
 		
 		phoneCard.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
-			{ 
-				
-				JFrame procedureFrame = new JFrame(); 
-				procedureFrame.setTitle("Donation Procedure");
-				
-				JPanel mainPanel = new JPanel(); 
-				mainPanel.setPreferredSize(new Dimension(700, 375));
-				mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-				
-				JPanel picturePanel = new JPanel(); 
-				picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
-				picturePanel.setPreferredSize(new Dimension(250, 250));
-				
-				JLabel thankYou = new JLabel("Thank you for choosing NoPoverty");
-				thankYou.setFont(new Font("Verdana", Font.PLAIN, 20));
-				thankYou.setHorizontalAlignment(JLabel.CENTER);
-				thankYou.setPreferredSize(new Dimension(350, 35));
-				mainPanel.add(picturePanel);
-				mainPanel.add(thankYou);
-				
-				if (!(login.isLogin))
-				{
-					JLabel registerAcc = new JLabel("Please login to donate");
-					JLabel note = new JLabel("You can still choose to donate anonymously after registering");
-					
-					registerAcc.setFont(new Font("Verdana", Font.PLAIN, 20));
-					note.setFont(new Font("Verdana", Font.PLAIN, 20));
-					registerAcc.setHorizontalAlignment(JLabel.CENTER);
-					note.setHorizontalAlignment(JLabel.CENTER);
-					registerAcc.setPreferredSize(new Dimension(700, 35));
-					note.setPreferredSize(new Dimension(700, 35));
-					registerAcc.setForeground(Color.red);
-					note.setForeground(Color.red);
-					
-					mainPanel.add(note);
-					mainPanel.add(registerAcc);
-				}
-				else
-				{
-					JLabel procedure = new JLabel("Set Up Procedure...");
-					procedure.setFont(new Font("Verdana", Font.PLAIN, 20));
-					procedure.setHorizontalAlignment(JLabel.CENTER);
-					procedure.setPreferredSize(new Dimension(700, 35));
-					mainPanel.add(procedure);
-				}
-				
-				procedureFrame.setSize(700, 375);
-				procedureFrame.add(mainPanel);
-				procedureFrame.setLocationRelativeTo(null);
-				procedureFrame.setVisible(true);
+			{
+				donationRegistration(e); 
 			}
 		});
 		
 		bottleCard.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
-			{ 
-				
-				JFrame procedureFrame = new JFrame(); 
-				procedureFrame.setTitle("Donation Procedure");
-				
-				JPanel mainPanel = new JPanel(); 
-				mainPanel.setPreferredSize(new Dimension(700, 375));
-				mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-				
-				JPanel picturePanel = new JPanel(); 
-				picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
-				picturePanel.setPreferredSize(new Dimension(250, 250));
-				
-				JLabel thankYou = new JLabel("Thank you for choosing NoPoverty");
-				thankYou.setFont(new Font("Verdana", Font.PLAIN, 20));
-				thankYou.setHorizontalAlignment(JLabel.CENTER);
-				thankYou.setPreferredSize(new Dimension(350, 35));
-				mainPanel.add(picturePanel);
-				mainPanel.add(thankYou);
-				
-				if (!(login.isLogin))
-				{
-					JLabel registerAcc = new JLabel("Please login to donate");
-					JLabel note = new JLabel("You can still choose to donate anonymously after registering");
-					
-					registerAcc.setFont(new Font("Verdana", Font.PLAIN, 20));
-					note.setFont(new Font("Verdana", Font.PLAIN, 20));
-					registerAcc.setHorizontalAlignment(JLabel.CENTER);
-					note.setHorizontalAlignment(JLabel.CENTER);
-					registerAcc.setPreferredSize(new Dimension(700, 35));
-					note.setPreferredSize(new Dimension(700, 35));
-					registerAcc.setForeground(Color.red);
-					note.setForeground(Color.red);
-					
-					mainPanel.add(note);
-					mainPanel.add(registerAcc);
-				}
-				else
-				{
-					JLabel procedure = new JLabel("Set Up Procedure...");
-					procedure.setFont(new Font("Verdana", Font.PLAIN, 20));
-					procedure.setHorizontalAlignment(JLabel.CENTER);
-					procedure.setPreferredSize(new Dimension(700, 35));
-					mainPanel.add(procedure);
-				}
-				
-				procedureFrame.setSize(700, 375);
-				procedureFrame.add(mainPanel);
-				procedureFrame.setLocationRelativeTo(null);
-				procedureFrame.setVisible(true);
+			{
+				donationRegistration(e); 
 			}
 		});
 	
