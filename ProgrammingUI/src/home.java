@@ -15,7 +15,7 @@ public class home
 	};
 	public static String arrayOfSlogans2[] = {
 			"",
-			"Donation? <title here>",
+			"Donation? All In.",
 			"Hong Aik Slogan 2nd Line",
 			"Zi Jie Slogan 2nd Line",
 			"Resilience Tomorrow",
@@ -118,14 +118,14 @@ public class home
 		btnPanel.add(nextPanel);
 		
 		// creating the messages
-		JLabel msg = new JLabel("Hotel? Trivago."); 
+		JLabel msg = new JLabel(arrayOfSlogans[1]); 
 		labelPanel.add(msg);
 		msg.setHorizontalAlignment(JLabel.CENTER);
 		msg.setFont(new Font("Verdana", Font.BOLD, 20));
 		msg.setPreferredSize(new Dimension(1050, 25));
 		
 		// creating messages part 2
-		JLabel msg2 = new JLabel("Donation? <title here>."); 
+		JLabel msg2 = new JLabel(arrayOfSlogans2[1]); 
 		labelPanel.add(msg2);
 		msg2.setHorizontalAlignment(JLabel.CENTER);
 		msg2.setFont(new Font("Verdana", Font.BOLD, 20));

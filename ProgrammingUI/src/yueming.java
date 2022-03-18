@@ -7,7 +7,7 @@ public class yueming
 	public static JPanel newPanel()
 	{ 
 		ImageIcon FBimg = new ImageIcon("ProgrammingUI/src/Global-FoodBanking.png");
-		ImageIcon Givemeal = new ImageIcon("ProgrammingUI\\src\\GiveAmeal.jfif");
+		//ImageIcon Givemeal = new ImageIcon("ProgrammingUI\\src\\GiveAmeal.jfif");
 		ImageIcon Whydonate = new ImageIcon("ProgrammingUI\\src\\whydonate.png");
 		ImageIcon noHungerpic = new ImageIcon("ProgrammingUI\\src\\no-Hunger.png");
 		JPanel panel = new JPanel(); 
@@ -37,16 +37,17 @@ public class yueming
 				+ "<br/> banks respond to immediate needs <br/>while powering a community-driven"
 				+ "<br/>response that builds resilience for <br/> the future.</html>");//paragraph text for donation reason
 		DonationR.setFont(new Font("Alice",Font.PLAIN, 20));
-		DonationR.setForeground(Color.decode("#00bd26"));
+		DonationR.setForeground(Color.decode("#00871b"));
 				     
 		
 		
-		JLabel Gmeal = new JLabel(Givemeal);
+		//JLabel Gmeal = new JLabel(Givemeal);
 		JLabel WDonate = new JLabel(Whydonate);
 		JLabel NHunger = new JLabel(noHungerpic);
 		
-		
-		
+		JPanel DmealNow = chengxun.createCard("GIVE SOMEONE A MEAL","ProgrammingUI\\src\\GiveAmeal.jfif");
+		//card created so that i can display image while have the fuction of a button
+		DmealNow.setBackground(Color.decode("#caebd7"));
 		
 		
 		JLabel FBPic = new JLabel(FBimg);
@@ -56,9 +57,10 @@ public class yueming
 		JPanel Cen = new JPanel(); //center panel created
 		Cen.setBackground(Color.decode("#caebd7"));
 		Cen.setLayout(new BorderLayout());
-		Cen.add(Gmeal,BorderLayout.CENTER);
+		//Cen.add(Gmeal,BorderLayout.CENTER);
 		Cen.add(sloganTextmain,BorderLayout.WEST);
 		Cen.add(DonationR,BorderLayout.EAST);
+		Cen.add(DmealNow,BorderLayout.CENTER);
 		
 		panel.add(Cen,BorderLayout.CENTER);
 		
@@ -76,14 +78,16 @@ public class yueming
 		
 		
 		panel.add(Rig,BorderLayout.EAST);
-				
-
 		
+		return panel;
+	
+			
+
 		
 		//write your code above
 		
 		
-		return panel;
+		
 	}
 }
 

@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class subscription {
 	
-	public static boolean isSub = false;
+	public static boolean isSub = true;
 	
 	public static JPanel createSubscriptionPanel()
 	{ 
