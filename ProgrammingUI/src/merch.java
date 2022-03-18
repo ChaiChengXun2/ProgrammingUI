@@ -4,39 +4,50 @@ import java.awt.event.*;
 
 public class merch {
 	
+	// functiont to handle event
 	static void purchaseEvent(MouseEvent e, String imageSource)
 	{ 
-		JFrame procedureFrame = new JFrame(); 
-		procedureFrame.setTitle("Donation Procedure");
+		// creation of another frame 
+		JFrame mainFrame = new JFrame(); 
+		mainFrame.setTitle("Donation Procedure");
 		
+		// creation of main panel
 		JPanel mainPanel = new JPanel(); 
 		mainPanel.setPreferredSize(new Dimension(700, 375));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		
+		// creation of label to place image
 		JPanel imgPnl = new JPanel(); 
 		JLabel imgLbl = new JLabel(new ImageIcon(imageSource));
 		
+		// creation of confirmation and cancel panel
 		JPanel confirmPanel = new JPanel(); 
 		JPanel cancelPanel = new JPanel(); 
 		
+		// confirmation and cancel images 
 		JLabel cross = new JLabel(new ImageIcon("ProgrammingUI/src/cross.png"));
 		JLabel tick = new JLabel(new ImageIcon("ProgrammingUI/src/tick.png"));
 		
+		// confirmation and cancel text
 		JLabel confirm = new JLabel("Confirm your purchase"); 
 		JLabel cancel = new JLabel("Cancel your purchase");
 		
+		// configuration of confirm and cancel text
 		confirm.setFont(new Font("Verdana", Font.PLAIN, 12));
 		cancel.setFont(new Font("Verdana", Font.PLAIN, 12));
 		
+		// configuration of panels
 		imgPnl.setPreferredSize(new Dimension(700, 225));
 		confirmPanel.setPreferredSize(new Dimension(250, 100));
 		cancelPanel.setPreferredSize(new Dimension(250, 100));
 		
+		// more configuration of panels
 		imgPnl.setBackground(main.lightgreen);
 		confirmPanel.setBackground(main.lightgreen); 
 		cancelPanel.setBackground(main.lightgreen);
 		mainPanel.setBackground(main.lightgreen);
 		
+		// adding everything into frame
 		confirmPanel.add(confirm); 
 		confirmPanel.add(tick);
 		cancelPanel.add(cross);
@@ -47,11 +58,13 @@ public class merch {
 		mainPanel.add(confirmPanel); 
 		mainPanel.add(cancelPanel);
 		
-		procedureFrame.setSize(700, 385);
-		procedureFrame.add(mainPanel);
-		procedureFrame.setLocationRelativeTo(null);
-		procedureFrame.setVisible(true);
+		// configuration for main frame
+		mainFrame.setSize(700, 385);
+		mainFrame.add(mainPanel);
+		mainFrame.setLocationRelativeTo(null);
+		mainFrame.setVisible(true);
 		
+		// event handling
 		confirmPanel.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent e) 
 			{ 
@@ -80,6 +93,7 @@ public class merch {
 	
 	public static JPanel createMerchPanel()
 	{ 
+		// create main panel
 		JPanel panel = new JPanel(); 
 		panel.setPreferredSize(new Dimension(1050, 625));
 		panel.setBackground(main.lightgreen);

@@ -300,6 +300,7 @@ public class main
 		mainFrame.add(btnPanel, BorderLayout.NORTH);  
 		mainFrame.add(contentPanel, BorderLayout.CENTER);  
 		
+		//configuration of main frame
 		mainFrame.setSize(1050, 725);
 		mainFrame.setTitle("Title Here");
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   

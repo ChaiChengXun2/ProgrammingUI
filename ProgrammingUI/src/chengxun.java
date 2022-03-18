@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class chengxun 
 {
-	
+	// html elemnets to flex 
 	static String ty = "<html>"
 							+ "<body>"
 								+ "<p style=\"font-weight: plain; text-align: center; font-size:17px;\">Thank you for choosing NoPoverty</p>"
@@ -25,26 +25,34 @@ public class chengxun
 										+ "<p style=\"font-weight: plain; text-align: center; font-size:17px;\">Set up procedure...</p>"
 									+ "</body>"
 								+ "</html>";
+	
+	// function for event handling
 	static void donationRegistration(MouseEvent e)
 	{ 
+		// creation of another frame
 		JFrame procedureFrame = new JFrame(); 
 		procedureFrame.setTitle("Donation Procedure");
 		
+		// creation of main panel inside the frame
 		JPanel mainPanel = new JPanel(); 
 		mainPanel.setPreferredSize(new Dimension(700, 375));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		
+		// adding icon into the frame
 		JPanel picturePanel = new JPanel(); 
 		picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
 		picturePanel.setPreferredSize(new Dimension(250, 250));
 		
+		// adding a thank you message
 		JLabel thankYou = new JLabel(ty);
 		thankYou.setHorizontalAlignment(JLabel.CENTER);
 		mainPanel.add(picturePanel);
 		mainPanel.add(thankYou);
 		
+		// checks if user is logged in
 		if (!(login.isLogin))
 		{
+			// telling users to create an account or log in before donation 
 			JLabel registerAcc = new JLabel(registerAccount);
 			JLabel note = new JLabel(donateNote);
 			
@@ -58,11 +66,13 @@ public class chengxun
 		}
 		else
 		{
+			// if they are logged in, proceed to set up procedure
 			JLabel procedure = new JLabel(procedureTxt);
 			procedure.setHorizontalAlignment(JLabel.CENTER);
 			mainPanel.add(procedure);
 		}
 		
+		// configuration of main frame 
 		procedureFrame.setSize(700, 375);
 		procedureFrame.add(mainPanel);
 		procedureFrame.setLocationRelativeTo(null);
@@ -85,6 +95,7 @@ public class chengxun
 		contentPanel.setBackground(main.lightgreen);
 		contentPanel.setPreferredSize(new Dimension(1050, 315));
 		
+		// creation of a label to place image
 		JLabel cxBanner = new JLabel(banner);
 		contentPanel.add(cxBanner);
 		
