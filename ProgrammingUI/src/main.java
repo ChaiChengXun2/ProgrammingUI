@@ -13,6 +13,9 @@ public class main
 	public static Color lightgreen = new Color(168, 200, 208);
 	public static Color grey = new Color(199, 208, 216);
 	public static Color transparent = new Color(0, 0, 0, 0);
+	
+	public static JPanel contentPanel = new JPanel();
+	public static CardLayout slidePanel = new CardLayout();
 	   
 	public static void main(String args[])  
 	{  
@@ -22,9 +25,7 @@ public class main
 		// creation of main frame
 		JFrame mainFrame = new JFrame(); 
 		  
-		// creation of panels
-		JPanel contentPanel = new JPanel();  
-		CardLayout slidePanel = new CardLayout();
+		// creation of panels  
 		JPanel btnPanel = new JPanel();   
 		
 		// configurations of top and bottom panels

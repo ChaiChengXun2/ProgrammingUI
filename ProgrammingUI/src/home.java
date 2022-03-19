@@ -111,6 +111,12 @@ public class home
 		next.setFont(new Font("Verdana", Font.PLAIN, 20));
 		prev.setFont(new Font("Verdana", Font.PLAIN, 20));
 		
+		nextPanel.setBackground(main.darkgreen);
+		prevPanel.setBackground(main.darkgreen);
+		
+		next.setForeground(Color.white); 
+		prev.setForeground(Color.white);
+		
 		// adding buttons into button panels
 		nextPanel.add(next);
 		prevPanel.add(prev);
@@ -156,11 +162,13 @@ public class home
 			public void mouseEntered(MouseEvent e)
 			{
 				nextPanel.setBackground(main.grey);
+				next.setForeground(Color.black);
 			}
 			
 			public void mouseExited(MouseEvent e)
 			{
-				nextPanel.setBackground(main.lightgreen);
+				nextPanel.setBackground(main.darkgreen);
+				next.setForeground(Color.white);
 			}
 		});
 		
@@ -188,11 +196,13 @@ public class home
 			public void mouseEntered(MouseEvent e)
 			{
 				prevPanel.setBackground(main.grey);
+				prev.setForeground(Color.black);
 			}
 			
 			public void mouseExited(MouseEvent e)
 			{
-				prevPanel.setBackground(main.lightgreen);
+				prevPanel.setBackground(main.darkgreen);
+				prev.setForeground(Color.white);
 			}
 		});
 		

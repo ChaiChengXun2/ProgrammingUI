@@ -87,12 +87,22 @@ public class login
 		JPanel loginLbl = new JPanel();
 		JLabel login = new JLabel("Login");
 		
-		loginLbl.setBackground(main.darkgreen);
+		loginLbl.setBackground(main.lightgreen);
+		loginLbl.setPreferredSize(new Dimension(200, 30));
 		
 		login.setFont(new Font("Verdana", Font.PLAIN, 15));
-		login.setForeground(main.lightgreen);
+		login.setForeground(Color.black);
 		
 		loginLbl.add(login);
+		
+		JPanel registerPnl = new JPanel(); 
+		JLabel rgs = new JLabel("Dont have an account?");
+		registerPnl.setBackground(main.darkgreen);
+		registerPnl.setPreferredSize(new Dimension(200, 20));
+		rgs.setForeground(main.lightgreen);
+		rgs.setFont(new Font("Verdana", Font.PLAIN, 10));
+		
+		registerPnl.add(rgs);
 		
 		// adding everything into the main panel
 		inputPanel.add(title);
@@ -102,6 +112,7 @@ public class login
 		inputPanel.add(passwordLabel);
 		inputPanel.add(passwordInput);
 		inputPanel.add(empty2);
+		inputPanel.add(registerPnl);
 		inputPanel.add(loginLbl);
 		inputPanel.add(errorMsg);
 		contentPanel.add(inputPanel);
@@ -146,12 +157,28 @@ public class login
 			public void mouseEntered(MouseEvent e) 
 			{ 
 				login.setFont(new Font("Verdana", Font.BOLD, 17));
-				login.setForeground(main.grey);
+				loginLbl.setBackground(main.grey);
 			}
 			public void mouseExited(MouseEvent e) 
 			{ 
 				login.setFont(new Font("Verdana", Font.PLAIN, 15));
-				loginLbl.setBackground(main.darkgreen);
+				loginLbl.setBackground(main.lightgreen);
+			}
+		});
+		
+		registerPnl.addMouseListener(new MouseAdapter() 
+		{
+			public void mouseClicked(MouseEvent e)
+			{
+				main.slidePanel.show(main.contentPanel, "8");
+			}
+			public void mouseEntered(MouseEvent e) 
+			{ 
+				rgs.setFont(new Font("Verdana", Font.ITALIC, 10));
+			}
+			public void mouseExited(MouseEvent e) 
+			{ 
+				rgs.setFont(new Font("Verdana", Font.PLAIN, 10));
 			}
 		});
 		

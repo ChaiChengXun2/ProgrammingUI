@@ -91,12 +91,22 @@ public class register
 		JPanel registerLbl = new JPanel();
 		JLabel register = new JLabel("Register");
 		
-		registerLbl.setBackground(main.darkgreen);
+		registerLbl.setBackground(main.lightgreen);
+		registerLbl.setPreferredSize(new Dimension(200, 30));
 		
 		register.setFont(new Font("Verdana", Font.PLAIN, 15));
-		register.setForeground(main.lightgreen);
+		register.setForeground(Color.black);
 		
 		registerLbl.add(register);
+		
+		JPanel loginPnl = new JPanel(); 
+		JLabel login = new JLabel("Already have an account?");
+		loginPnl.setBackground(main.darkgreen);
+		loginPnl.setPreferredSize(new Dimension(200, 20));
+		login.setForeground(main.lightgreen);
+		login.setFont(new Font("Verdana", Font.PLAIN, 10));
+		
+		loginPnl.add(login);
 		
 		// adding everything into the main panel
 		inputPanel.add(title);
@@ -107,6 +117,7 @@ public class register
 		inputPanel.add(passwordInput);
 		inputPanel.add(confirmationLabel);
 		inputPanel.add(confirmationInput);
+		inputPanel.add(loginPnl);
 		inputPanel.add(registerLbl);
 		inputPanel.add(errorMsg);
 		contentPanel.add(inputPanel);
@@ -158,12 +169,28 @@ public class register
 			public void mouseEntered(MouseEvent e) 
 			{ 
 				register.setFont(new Font("Verdana", Font.BOLD, 17));
-				register.setForeground(main.grey);
+				registerLbl.setBackground(main.grey);
 			}
 			public void mouseExited(MouseEvent e) 
 			{ 
 				register.setFont(new Font("Verdana", Font.PLAIN, 15));
-				registerLbl.setBackground(main.darkgreen);
+				registerLbl.setBackground(main.lightgreen);
+			}
+		});
+		
+		loginPnl.addMouseListener(new MouseAdapter() 
+		{
+			public void mouseClicked(MouseEvent e)
+			{
+				main.slidePanel.show(main.contentPanel, "9");
+			}
+			public void mouseEntered(MouseEvent e) 
+			{ 
+				login.setFont(new Font("Verdana", Font.ITALIC, 10));
+			}
+			public void mouseExited(MouseEvent e) 
+			{ 
+				login.setFont(new Font("Verdana", Font.PLAIN, 10));
 			}
 		});
 		

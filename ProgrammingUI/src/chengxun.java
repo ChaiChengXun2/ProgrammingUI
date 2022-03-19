@@ -30,22 +30,25 @@ public class chengxun
 	static void donationRegistration(MouseEvent e)
 	{ 
 		// creation of another frame
-		JFrame procedureFrame = new JFrame(); 
-		procedureFrame.setTitle("Donation Procedure");
+		JFrame mainFrame = new JFrame(); 
+		mainFrame.setTitle("Donation Procedure");
 		
 		// creation of main panel inside the frame
 		JPanel mainPanel = new JPanel(); 
-		mainPanel.setPreferredSize(new Dimension(700, 375));
+		mainPanel.setPreferredSize(new Dimension(700, 450));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+		mainPanel.setBackground(main.lightgreen);
 		
 		// adding icon into the frame
 		JPanel picturePanel = new JPanel(); 
 		picturePanel.add(new JLabel(new ImageIcon("ProgrammingUI/src/No Poverty Icon.png")));
 		picturePanel.setPreferredSize(new Dimension(250, 250));
+		picturePanel.setBackground(main.lightgreen);
 		
 		// adding a thank you message
 		JLabel thankYou = new JLabel(ty);
 		thankYou.setHorizontalAlignment(JLabel.CENTER);
+		thankYou.setPreferredSize(new Dimension(400, 50));
 		mainPanel.add(picturePanel);
 		mainPanel.add(thankYou);
 		
@@ -56,27 +59,124 @@ public class chengxun
 			JLabel registerAcc = new JLabel(registerAccount);
 			JLabel note = new JLabel(donateNote);
 			
+			JPanel loginPnl = new JPanel(); 
+			JPanel registerPnl = new JPanel(); 
+			
+			JLabel login = new JLabel("Login"); 
+			JLabel register = new JLabel("Register"); 
+			
+			login.setFont(new Font("Verdana", Font.PLAIN, 12));
+			register.setFont(new Font("Verdana", Font.PLAIN, 12));
+			
 			registerAcc.setHorizontalAlignment(JLabel.CENTER);
-			note.setHorizontalAlignment(JLabel.CENTER);
+			registerAcc.setPreferredSize(new Dimension(700, 50));
 			registerAcc.setForeground(Color.red);
+			
+			note.setHorizontalAlignment(JLabel.CENTER);
 			note.setForeground(Color.red);
+			note.setPreferredSize(new Dimension(700, 50));
+			
+			loginPnl.setBackground(main.darkgreen); 
+			loginPnl.setPreferredSize(new Dimension(300, 30));
+			registerPnl.setBackground(main.darkgreen);
+			registerPnl.setPreferredSize(new Dimension(300, 30));
+			
+			login.setForeground(Color.white);
+			register.setForeground(Color.white);
+			
+			loginPnl.add(login); 
+			registerPnl.add(register);
 			
 			mainPanel.add(note);
 			mainPanel.add(registerAcc);
+			
+			mainPanel.add(loginPnl); 
+			mainPanel.add(registerPnl);
+			
+			loginPnl.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e)
+				{ 
+					main.slidePanel.show(main.contentPanel, "9");
+					mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
+				}
+				public void mouseEntered(MouseEvent e) 
+				{ 
+					login.setFont(new Font("Verdana", Font.BOLD, 12));
+					loginPnl.setBackground(main.grey);
+					login.setForeground(Color.black);
+				}
+				public void mouseExited(MouseEvent e) 
+				{ 
+					login.setFont(new Font("Verdana", Font.PLAIN, 12));
+					loginPnl.setBackground(main.darkgreen);
+					login.setForeground(Color.white);
+				}
+			});
+			
+			registerPnl.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e)
+				{ 
+					main.slidePanel.show(main.contentPanel, "8");
+					mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
+				}
+				public void mouseEntered(MouseEvent e) 
+				{ 
+					register.setFont(new Font("Verdana", Font.BOLD, 12));
+					registerPnl.setBackground(main.grey);
+					register.setForeground(Color.black);
+				}
+				public void mouseExited(MouseEvent e) 
+				{ 
+					register.setFont(new Font("Verdana", Font.PLAIN, 12));
+					registerPnl.setBackground(main.darkgreen);
+					register.setForeground(Color.white);
+				}
+			});
 		}
 		else
 		{
 			// if they are logged in, proceed to set up procedure
 			JLabel procedure = new JLabel(procedureTxt);
 			procedure.setHorizontalAlignment(JLabel.CENTER);
+			
+			JPanel donatePnl = new JPanel(); 
+			JLabel donate = new JLabel("Donate now"); 
+			
+			donate.setFont(new Font("Verdana", Font.PLAIN, 12));
+			donate.setForeground(Color.white);
+			
+			donatePnl.setBackground(main.darkgreen);
+			donatePnl.add(donate);
+			donatePnl.setPreferredSize(new Dimension(600, 30));
+					
 			mainPanel.add(procedure);
+			mainPanel.add(donatePnl);
+			
+			donatePnl.addMouseListener(new MouseAdapter() {
+				public void mouseClicked(MouseEvent e)
+				{ 
+					mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
+				}
+				public void mouseEntered(MouseEvent e) 
+				{ 
+					donate.setFont(new Font("Verdana", Font.BOLD, 12));
+					donatePnl.setBackground(main.grey);
+					donate.setForeground(Color.black);
+				}
+				public void mouseExited(MouseEvent e) 
+				{ 
+					donate.setFont(new Font("Verdana", Font.PLAIN, 12));
+					donatePnl.setBackground(main.darkgreen);
+					donate.setForeground(Color.white);
+				}
+			});
 		}
 		
 		// configuration of main frame 
-		procedureFrame.setSize(700, 375);
-		procedureFrame.add(mainPanel);
-		procedureFrame.setLocationRelativeTo(null);
-		procedureFrame.setVisible(true);
+		mainFrame.setSize(700, 450);
+		mainFrame.add(mainPanel);
+		mainFrame.setLocationRelativeTo(null);
+		mainFrame.setVisible(true);
 	}
 	
 	public static JPanel newPanel()

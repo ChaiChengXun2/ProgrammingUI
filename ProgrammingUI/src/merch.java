@@ -36,6 +36,9 @@ public class merch {
 		confirm.setFont(new Font("Verdana", Font.PLAIN, 12));
 		cancel.setFont(new Font("Verdana", Font.PLAIN, 12));
 		
+		confirm.setForeground(Color.white); 
+		cancel.setForeground(Color.white);
+		
 		// configuration of panels
 		imgPnl.setPreferredSize(new Dimension(700, 225));
 		confirmPanel.setPreferredSize(new Dimension(250, 100));
@@ -43,8 +46,8 @@ public class merch {
 		
 		// more configuration of panels
 		imgPnl.setBackground(main.lightgreen);
-		confirmPanel.setBackground(main.lightgreen); 
-		cancelPanel.setBackground(main.lightgreen);
+		confirmPanel.setBackground(main.darkgreen); 
+		cancelPanel.setBackground(main.darkgreen);
 		mainPanel.setBackground(main.lightgreen);
 		
 		// adding everything into frame
@@ -74,11 +77,13 @@ public class merch {
 			{ 
 				confirm.setFont(new Font("Verdana", Font.BOLD, 12));
 				confirmPanel.setBackground(main.grey);
+				confirm.setForeground(Color.black);
 			}
 			public void mouseExited(MouseEvent e) 
 			{ 
 				confirm.setFont(new Font("Verdana", Font.PLAIN, 12));
-				confirmPanel.setBackground(main.lightgreen);
+				confirmPanel.setBackground(main.darkgreen);
+				confirm.setForeground(Color.white);
 			}
 		});
 		cancelPanel.addMouseListener(new MouseAdapter() {
@@ -90,11 +95,13 @@ public class merch {
 			{ 
 				cancel.setFont(new Font("Verdana", Font.BOLD, 12));
 				cancelPanel.setBackground(main.grey);
+				cancel.setForeground(Color.black);
 			}
 			public void mouseExited(MouseEvent e) 
 			{ 
 				cancel.setFont(new Font("Verdana", Font.PLAIN, 12));
-				cancelPanel.setBackground(main.lightgreen);
+				cancelPanel.setBackground(main.darkgreen);
+				cancel.setForeground(Color.white);
 			}
 		});
 	}
@@ -136,7 +143,7 @@ public class merch {
 		// creation of the button panel 
 		JPanel pressPnl = new JPanel(); 
 		pressPnl.setPreferredSize(new Dimension(200, 48)); 
-		pressPnl.setBackground(main.lightgreen);
+		pressPnl.setBackground(main.darkgreen);
 		
 		// configuration of button panel
 		String html = "<html>"
@@ -148,6 +155,7 @@ public class merch {
 		JLabel press = new JLabel(html); 
 		press.setHorizontalAlignment(JLabel.CENTER);
 		press.setVerticalAlignment(JLabel.CENTER);
+		press.setForeground(Color.white);
 		
 		// creation of merch items 
 		String imgSrc1 = "ProgrammingUI/src/orange-shirt.png"; 
@@ -232,12 +240,13 @@ public class merch {
 			public void mouseEntered(MouseEvent e)
 			{ 
 				pressPnl.setBackground(main.grey);
-				press.setFont(new Font("Verdana", Font.BOLD, 12));
+				press.setForeground(Color.black);
+
 			}
 			public void mouseExited(MouseEvent e)
 			{ 
-				pressPnl.setBackground(main.lightgreen);
-				press.setFont(new Font("Verdana", Font.PLAIN, 12));
+				pressPnl.setBackground(main.darkgreen);
+				press.setForeground(Color.white);
 			}
 		});
 		
