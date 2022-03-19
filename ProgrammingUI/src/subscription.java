@@ -352,7 +352,7 @@ public class subscription {
 			public void mouseClicked(MouseEvent e) {
 				
 				subscriptionFrame.dispatchEvent(new WindowEvent(subscriptionFrame, WindowEvent.WINDOW_CLOSING));
-				
+				subscription.isSub = true;  	
 			}
 			
 			// Bolds the font when cursor enters the button
