@@ -303,7 +303,7 @@ public class main
 		
 		//configuration of main frame
 		mainFrame.setSize(1050, 725);
-		mainFrame.setTitle("Title Here");
+		mainFrame.setTitle("All In: Donation");
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
 		mainFrame.setLocationRelativeTo(null);
 		mainFrame.setVisible(true);  
