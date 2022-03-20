@@ -4,8 +4,11 @@ import java.awt.event.*;
 
 public class merch {
 	
+	static int AIpoints = 1000;
+	static JLabel points = new JLabel(String.format("AI Points: %d", AIpoints));
+	
 	// functiont to handle event
-	static void purchaseEvent(MouseEvent e, String imageSource)
+	static void purchaseEvent(MouseEvent e, String imageSource, int price)
 	{ 
 		// creation of another frame 
 		JFrame mainFrame = new JFrame(); 
@@ -13,7 +16,7 @@ public class merch {
 		
 		// creation of main panel
 		JPanel mainPanel = new JPanel(); 
-		mainPanel.setPreferredSize(new Dimension(700, 375));
+		mainPanel.setPreferredSize(new Dimension(700, 400));
 		mainPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		
 		// creation of label to place image
@@ -39,6 +42,14 @@ public class merch {
 		confirm.setForeground(Color.white); 
 		cancel.setForeground(Color.white);
 		
+		JPanel costPnl = new JPanel();
+		JLabel cost = new JLabel(String.format("The price of this product is: %d", price));
+		costPnl.setPreferredSize(new Dimension(700, 30));
+		costPnl.setBackground(main.lightgreen); 
+		cost.setForeground(Color.black);
+		cost.setFont(new Font("Verdana", Font.PLAIN, 20));
+		costPnl.add(cost);
+		
 		// configuration of panels
 		imgPnl.setPreferredSize(new Dimension(700, 225));
 		confirmPanel.setPreferredSize(new Dimension(250, 100));
@@ -58,11 +69,12 @@ public class merch {
 		imgPnl.add(imgLbl);
 		
 		mainPanel.add(imgPnl); 
+		mainPanel.add(costPnl);
 		mainPanel.add(confirmPanel); 
 		mainPanel.add(cancelPanel);
 		
 		// configuration for main frame
-		mainFrame.setSize(700, 385);
+		mainFrame.setSize(700, 420);
 		mainFrame.add(mainPanel);
 		mainFrame.setLocationRelativeTo(null);
 		mainFrame.setVisible(true);
@@ -72,6 +84,15 @@ public class merch {
 			public void mouseClicked(MouseEvent e)
 			{ 
 				mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
+				if (merch.AIpoints >= price)
+				{ 
+					merch.AIpoints -= price;
+					points.setText(String.format("AI Points: %d", merch.AIpoints));
+				}
+				else 
+				{ 
+					JOptionPane.showMessageDialog(null, "Not enough AI points \nPurchase Failed");
+				}
 			}
 			public void mouseEntered(MouseEvent e) 
 			{ 
@@ -127,13 +148,13 @@ public class merch {
 		middlePanel.setBackground(main.lightgreen);
 		
 		// layout configuration of panels 
-		leftPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 125));
+		leftPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 100));
 		
 		// size configuration of panels
 		picturePanel.setPreferredSize(new Dimension(250, 250));
 		leftPanel.setPreferredSize(new Dimension(250, 625));
 		rightPanel.setPreferredSize(new Dimension(800, 625));
-		middlePanel.setPreferredSize(new Dimension(250, 350)); // this is within the leftPanel
+		middlePanel.setPreferredSize(new Dimension(250, 400)); // this is within the leftPanel
 		
 		// creation of "status" label 
 		JLabel msg = new JLabel(); 
@@ -156,6 +177,23 @@ public class merch {
 		press.setHorizontalAlignment(JLabel.CENTER);
 		press.setVerticalAlignment(JLabel.CENTER);
 		press.setForeground(Color.white);
+	
+		JPanel pointPnl = new JPanel(); 
+		
+		int cost[] = {
+				250, 
+				250, 
+				250, 
+				450, 
+				450, 
+				450
+		};
+		
+		points.setFont(new Font("Verdana", Font.PLAIN, 15));
+		points.setForeground(Color.black);
+		pointPnl.setBackground(main.lightgreen);
+		pointPnl.setPreferredSize(new Dimension(400, 25));
+		pointPnl.add(points);
 		
 		// creation of merch items 
 		String imgSrc1 = "ProgrammingUI/src/orange-shirt.png"; 
@@ -180,42 +218,42 @@ public class merch {
 		nonsubItem1.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
 			{ 
-				purchaseEvent(e, imgSrc1);
+				purchaseEvent(e, imgSrc1, cost[0]);
 			}
 		});
 		
 		nonsubItem2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
 			{ 
-				purchaseEvent(e, imgSrc2);
+				purchaseEvent(e, imgSrc2, cost[1]);
 			}
 		});
 		
 		nonsubItem3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
 			{ 
-				purchaseEvent(e, imgSrc3);
+				purchaseEvent(e, imgSrc3, cost[2]);
 			}
 		});
 		
 		subItem1.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
 			{ 
-				purchaseEvent(e, imgSrc4);
+				purchaseEvent(e, imgSrc4, cost[3]);
 			}
 		});
 		
 		subItem2.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
 			{ 
-				purchaseEvent(e, imgSrc5);
+				purchaseEvent(e, imgSrc5, cost[4]);
 			}
 		});
 		
 		subItem3.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e)
 			{ 
-				purchaseEvent(e, imgSrc6);
+				purchaseEvent(e, imgSrc6, cost[5]);
 			}
 		});
 		
@@ -260,6 +298,7 @@ public class merch {
 		
 		leftPanel.add(middlePanel);
 		middlePanel.add(picturePanel);
+		middlePanel.add(pointPnl);
 		middlePanel.add(pressPnl);
 		middlePanel.add(msg);
 		
