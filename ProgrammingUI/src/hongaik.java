@@ -42,15 +42,35 @@ public class hongaik {
 		panel.add(Top, BorderLayout.NORTH);
 		
 		//Creation of Bottom Left Panel
-		JPanel info = new JPanel();
+		JPanel BotLeft = new JPanel();
 		JLabel information = new JLabel();
 		information.setText("Hello World");
         information.setFont(new Font("Open Sans Extra Bold", Font.PLAIN, 12));
-        info.setBackground(Color.decode("#1DA2D8"));
-        info.setPreferredSize(new Dimension(350, 400));
-        info.add(information, BorderLayout.NORTH);
+        information.setPreferredSize(new Dimension(350, 400));
+        information.setBackground(Color.decode("#1DA2D8"));
+        BotLeft.add(information, BorderLayout.WEST);
+        Bottom.add(information);
         panel.add(Bottom, BorderLayout.WEST);
         
+        //Creation of Bottom Center Panel
+       JPanel botcen = new JPanel();
+		BufferedImage img2 = null;
+		try {
+			img2 = ImageIO.read(new File("ProgrammingUI/src/trash.jpg"));
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		Image trash = img2.getScaledInstance(350, 300, Image.SCALE_SMOOTH);
+		JLabel BOTCEN = new JLabel();
+		ImageIcon Trash = new ImageIcon(trash);
+		BOTCEN.setIcon(Trash);
+		BOTCEN.setFont(new Font("Open Sans ExtraBold", Font.PLAIN, 12));
+		BOTCEN.setPreferredSize(new Dimension(1050, 200));
+		BOTCEN.setText("Remove Oceanic Trash!");
+		botcen.add(BOTCEN);
+		Bottom.add(botcen, BorderLayout.NORTH);
+		panel.add(Bottom, BorderLayout.CENTER);
 		//write your code above
 		
 		return panel;
