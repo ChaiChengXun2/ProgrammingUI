@@ -93,35 +93,21 @@ public class hongaik {
 		
 		//Creation of Bottom Right Panel
 		JPanel BotRight = new JPanel();
-		JLabel Donation = new JLabel();
+		
 		//Creation of Button
-		ButtonGroup bg = new ButtonGroup();
-		JRadioButton rb1 = new JRadioButton("$1", true);
-		JRadioButton rb2 = new JRadioButton("$10", false);
-		JRadioButton rb3 = new JRadioButton("$50", false);
-		JRadioButton rb4 = new JRadioButton("$100", false);
-		JRadioButton rb5 = new JRadioButton("Others", false);
-		
-		bg.add(rb1);
-		bg.add(rb2);
-		bg.add(rb3);
-		bg.add(rb4);
-		bg.add(rb5);
-		
-		//Organization of Bottom Right
-		Donation.add(rb1);
-		Donation.add(rb2);
-		Donation.add(rb3);
-		Donation.add(rb4);
-		Donation.add(rb5);
-		BotRight.add(Donation);
+		JButton Donate = new JButton("Click Here To Donate");
+		BotRight.add(Donate);
+		BotRight.setBackground(Color.decode("#FFB35C"));
 		Bottom.add(BotRight, BorderLayout.EAST);
 		
 		//Put together Bottom Panel
 		panel.add(Bottom,BorderLayout.CENTER);
 		
+		//Adding button functionality
+
 		//write your code above
 		
 		return panel;
 	}
+	
 }
