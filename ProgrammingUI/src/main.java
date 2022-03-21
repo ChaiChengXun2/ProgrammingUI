@@ -59,7 +59,7 @@ public class main
 		
 		// creation of buttons for each "view"
 		JLabel homeLbl = new JLabel(logo); 
-		JLabel cxLbl = new JLabel("Cheng Xun's Section");
+		JLabel cxLbl = new JLabel("NoPoverty");
 		JLabel haLbl = new JLabel("Hong Aik's Section");
 		JLabel ymLbl = new JLabel("Yue Ming's Section");
 		JLabel zjLbl = new JLabel("Zi Jie's Section");
