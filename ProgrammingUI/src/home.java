@@ -9,7 +9,7 @@ public class home
 			"", 
 			"Hotel? Trivago.",
 			"Hong Aik Slogan 1st Line",
-			"Zi Jie Slogan 1st Line", 
+			"Trees are the lungs of the world.", 
 			"Hunger Relief Now", 
 			"Your Trash Might Be Someone Else's Treasure"
 	};
@@ -17,7 +17,7 @@ public class home
 			"",
 			"Donation? All In.",
 			"Hong Aik Slogan 2nd Line",
-			"Zi Jie Slogan 2nd Line",
+			"Plant your tree today.",
 			"Resilience Tomorrow",
 			"Donate to People in Need Now"
 	};
