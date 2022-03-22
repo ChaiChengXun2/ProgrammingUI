@@ -103,11 +103,94 @@ public class hongaik {
 		//Put together Bottom Panel
 		panel.add(Bottom,BorderLayout.CENTER);
 		
-		//Adding button functionality
+		//Button functionality
+		Donate.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent ae) {
+				
+				JFrame DonationSea = new JFrame();
+				DonationSea.setTitle("Donate to save the ocean");
+				DonationSea.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				DonationSea.setResizable(false);
+				DonationSea.setSize(500, 400);
+				DonationSea.setVisible(true);
+				
+				JPanel donoSelection = new JPanel();
+				donoSelection.setPreferredSize(new Dimension(700, 380));
+				donoSelection.setBackground(Color.decode("#caebd7"));
+				donoSelection.setLayout(new FlowLayout());
+				
+				JTextField Others = new JTextField(10);
+				
+				BufferedImage img2 = null;
+				try {
+					img2 = ImageIO.read(new File("ProgrammingUI/src/underwater.jpg"));
+				}
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+				Image underwater = img2.getScaledInstance(1050, 200, Image.SCALE_SMOOTH);
 
+				if (!(login.isLogin)) {
+					
+					JLabel Register = new JLabel("Please login to make a donation");
+					
+					Register.setFont(new Font("Alice", Font.BOLD, 16));
+					Register.setHorizontalAlignment(JLabel.CENTER);
+					Register.setPreferredSize(new Dimension(400, 50));
+					Register.setForeground(Color.red);
+				
+					DonationSea.setSize(300,100);
+					donoSelection.add(Register);
+					
+				} 
+				
+				else {
+					
+				JPanel donationImage = new JPanel();
+				donationImage.add(new JLabel(new ImageIcon(underwater)));
+				donationImage.setPreferredSize(new Dimension(400, 200));
+				
+				JLabel appreciation = new JLabel("<html>Your contribution to save the ocean is much appreciated."
+						                        +"<br>Please choose donation amount.</html>");
+				appreciation.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				appreciation.setHorizontalAlignment(JLabel.LEFT);
+				appreciation.setPreferredSize(new Dimension(350,75));
+				
+				JPanel Selection = new JPanel();
+				Selection.setPreferredSize(new Dimension(350, 250));
+				Selection.setBackground(Color.decode("#caebd7"));
+				
+				ButtonGroup amountGroup1 = new ButtonGroup();
+				JRadioButton amount1 = new JRadioButton("5 Dollars", true);
+				JRadioButton amount2 = new JRadioButton("10 Dollars", false);
+				JRadioButton amount3 = new JRadioButton("50 Dollars", false);
+				JRadioButton amount4 = new JRadioButton("100 Dollars", false);
+				JRadioButton amount5 = new JRadioButton("Others", false);
+			
+				amountGroup1.add(amount1);
+				amountGroup1.add(amount2);
+				amountGroup1.add(amount3);
+				amountGroup1.add(amount4);
+				amountGroup1.add(amount5);
+				Selection.add(amount1);
+				Selection.add(amount2);
+				Selection.add(amount3);
+				Selection.add(amount4);
+				Selection.add(amount5);
+				Selection.add(Others);
+			
+			donoSelection.add(donationImage, BorderLayout.EAST);
+			donoSelection.add(appreciation, BorderLayout.WEST);
+			donoSelection.add(Selection, BorderLayout.SOUTH);
+			
+			DonationSea.add(donoSelection);
+			
+			}
+			}
+		});
 		//write your code above
 		
 		return panel;
 	}
-	
+		
 }
