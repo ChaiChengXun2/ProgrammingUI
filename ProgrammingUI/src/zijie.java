@@ -221,18 +221,55 @@ public class zijie
 				JPanel donationMain = new JPanel();
 				donationMain.setPreferredSize(new Dimension(700, 380));
 				donationMain.setLayout(new FlowLayout(FlowLayout.CENTER));
+				donationMain.setBackground(Color.decode("#ddefe3"));
 				
 				if (!(login.isLogin)) {
+					
+					
 					
 					JLabel unregistered = new JLabel("Please login to make a donation");
 					unregistered.setFont(new Font("Verdana", Font.PLAIN, 16));
 					unregistered.setHorizontalAlignment(JLabel.CENTER);
 					unregistered.setPreferredSize(new Dimension(400, 50));
 					unregistered.setForeground(Color.red);
-				
+					
+					JLabel login = new JLabel("<html><br>Login</html>");
+					login.setForeground(Color.decode("#a8d8cd"));
+					login.setFont(new Font("Verdana", Font.PLAIN, 12));
+					
+					JPanel loginButton = new JPanel();
+					loginButton.setBackground(main.darkgreen);
+					loginButton.setPreferredSize(new Dimension(125, 65));
+					loginButton.add(login);
+					
+					loginButton.addMouseListener(new MouseAdapter() {
+						
+						public void mouseEntered(MouseEvent e) {
+							
+							login.setFont(new Font("Verdana", Font.BOLD, 12));
+							
+						}
+						
+						public void mouseExited(MouseEvent e) {
+							
+							login.setFont(new Font("Verdana", Font.PLAIN, 12));
+							
+						}
+						
+						
+						public void mouseClicked(MouseEvent e) {
+							
+							main.slidePanel.show(main.contentPanel, "9");
+							DonationFrame.dispatchEvent(new WindowEvent(DonationFrame, WindowEvent.WINDOW_CLOSING));
+							
+						}
+						
+					});
+					
 					donationMain.add(unregistered);
-				
-					DonationFrame.setSize(300,100);
+					donationMain.add(loginButton);
+					
+					DonationFrame.setSize(400, 175);
 					
 				} else {
 					
@@ -240,19 +277,28 @@ public class zijie
 				donationImage.add(new JLabel(new ImageIcon("ProgrammingUI/src/Planting.jpg")));
 				donationImage.setPreferredSize(new Dimension(350, 250));
 				
-				JLabel appreciation = new JLabel("<html>We would like to express our gratitude to you for supporting<br>the effort.</html>");
+				JLabel appreciation = new JLabel("<html>We would like to express our gratitude to you for supporting the effort.</html>");
 				appreciation.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 18));
 				appreciation.setHorizontalAlignment(JLabel.CENTER);
 				appreciation.setPreferredSize(new Dimension(350,75));
 				
 				JPanel donationAMT = new JPanel();
 				donationAMT.setPreferredSize(new Dimension(350, 250));
+				donationAMT.setBackground(Color.decode("#ddefe3"));
 				
 					ButtonGroup amountGroup1 = new ButtonGroup();
-					JRadioButton amount1 = new JRadioButton("5 Trees", true);
+					JRadioButton amount1 = new JRadioButton("5 Trees", false);
+					amount1.setBackground(Color.decode("#ddefe3"));
+					
 					JRadioButton amount2 = new JRadioButton("20 Trees", false);
+					amount2.setBackground(Color.decode("#ddefe3"));
+					
 					JRadioButton amount3 = new JRadioButton("50 Trees", false);
+					amount3.setBackground(Color.decode("#ddefe3"));
+					
 					JRadioButton amount4 = new JRadioButton("100 Trees", false);
+					amount4.setBackground(Color.decode("#ddefe3"));
+					
 				
 					amountGroup1.add(amount1);
 					amountGroup1.add(amount2);

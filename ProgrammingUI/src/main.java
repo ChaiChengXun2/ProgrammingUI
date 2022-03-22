@@ -62,7 +62,7 @@ public class main
 		JLabel cxLbl = new JLabel("NoPoverty");
 		JLabel haLbl = new JLabel("Under The Sea");
 		JLabel ymLbl = new JLabel("Global FoodBanking Network");
-		JLabel zjLbl = new JLabel("Zi Jie's Section");
+		JLabel zjLbl = new JLabel("GoGreen");
 		JLabel merchLbl = new JLabel("Merch"); 
 		JLabel subLbl = new JLabel("Subscription");
 		JLabel registerLbl = new JLabel("Register");
