@@ -55,12 +55,16 @@ public class yueming
 	    
 		
 		JPanel Cen = new JPanel(); //center panel created
+		JPanel mealNowPanel = new JPanel(); // to make the card button smaller, another panel is created to exclusively put the button in
 		Cen.setBackground(Color.decode("#caebd7"));
 		Cen.setLayout(new BorderLayout());
 		//Cen.add(Gmeal,BorderLayout.CENTER);
 		Cen.add(sloganTextmain,BorderLayout.WEST);
 		Cen.add(DonationR,BorderLayout.EAST);
-		Cen.add(DmealNow,BorderLayout.CENTER);
+		Cen.add(mealNowPanel,BorderLayout.CENTER);
+		
+		mealNowPanel.add(DmealNow); // add the button into its standalone panel
+		mealNowPanel.setBackground(Color.decode("#caebd7"));
 		
 		panel.add(Cen,BorderLayout.CENTER);
 		
