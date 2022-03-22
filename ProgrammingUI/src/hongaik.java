@@ -109,7 +109,6 @@ public class hongaik {
 				
 				JFrame DonationSea = new JFrame();
 				DonationSea.setTitle("Donate to save the ocean");
-				DonationSea.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				DonationSea.setResizable(false);
 				DonationSea.setSize(500, 400);
 				DonationSea.setVisible(true);
@@ -131,7 +130,7 @@ public class hongaik {
 				Image underwater = img2.getScaledInstance(1050, 200, Image.SCALE_SMOOTH);
 
 				if (!(login.isLogin)) {
-					
+		
 					JLabel Register = new JLabel("Please login to make a donation");
 					
 					Register.setFont(new Font("Alice", Font.BOLD, 16));

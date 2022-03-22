@@ -8,7 +8,7 @@ public class home
 	public static String arrayOfSlogans[] = {
 			"", 
 			"Hotel? Trivago.",
-			"Hong Aik Slogan 1st Line",
+			"Save the Sea",
 			"Trees are the lungs of the world.", 
 			"Hunger Relief Now", 
 			"Your Trash Might Be Someone Else's Treasure"
@@ -16,7 +16,7 @@ public class home
 	public static String arrayOfSlogans2[] = {
 			"",
 			"Donation? All In.",
-			"Hong Aik Slogan 2nd Line",
+			"See the Future",
 			"Plant your tree today.",
 			"Resilience Tomorrow",
 			"Donate to People in Need Now"
