@@ -27,9 +27,11 @@ public class hongaik {
 		try {
 			img = ImageIO.read(new File("ProgrammingUI/src/Banner.jpg"));
 		}
+		
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		Image dimg = img.getScaledInstance(1050, 200, Image.SCALE_SMOOTH);
 		JLabel Banner = new JLabel();
 		
@@ -66,9 +68,11 @@ public class hongaik {
 		try {
 			img2 = ImageIO.read(new File("ProgrammingUI/src/trash.jpg"));
 		}
+		
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 		Image trash = img2.getScaledInstance(350, 300, Image.SCALE_SMOOTH);
 		
 		//Creation of Bottom Center Panel
@@ -120,9 +124,11 @@ public class hongaik {
 				try {
 					img2 = ImageIO.read(new File("ProgrammingUI/src/underwater.jpg"));
 				}
+				
 				catch (IOException e) {
 					e.printStackTrace();
 				}
+				
 				Image underwater = img2.getScaledInstance(1050, 200, Image.SCALE_SMOOTH);
 				
 				//Login setup
@@ -144,7 +150,16 @@ public class hongaik {
 					donoSelection.add(loginB, BorderLayout.SOUTH);
 					
 					DonationSea.add(donoSelection);
-				} 
+					
+					loginB.addActionListener(new ActionListener() { 
+						public void actionPerformed(ActionEvent e) {
+							main.slidePanel.show(main.contentPanel, "9");
+							DonationSea.dispatchEvent(new WindowEvent(DonationSea, WindowEvent.WINDOW_CLOSING));
+						}
+						
+					});
+					
+				}
 				
 				else { //Login successfully
 				
@@ -192,8 +207,11 @@ public class hongaik {
 			
 	         		DonationSea.add(donoSelection);
 	         		}
+				
 				}
+			
 			});
+		
 		//write your code above
 		
 		return panel;
