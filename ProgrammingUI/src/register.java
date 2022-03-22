@@ -49,7 +49,7 @@ public class register
 		JTextField confirmationInput = new JTextField();
 		
 		// creation of labels on the UI
-		JLabel title = new JLabel("Register your accout now!!");
+		JLabel title = new JLabel("Register your account now!!");
 		JLabel nameLabel = new JLabel("Username: "); 
 		JLabel passwordLabel = new JLabel("Password: ");
 		JLabel confirmationLabel = new JLabel("Confirmation Password: ");

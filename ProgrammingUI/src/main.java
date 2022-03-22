@@ -61,7 +61,7 @@ public class main
 		JLabel homeLbl = new JLabel(logo); 
 		JLabel cxLbl = new JLabel("NoPoverty");
 		JLabel haLbl = new JLabel("Hong Aik's Section");
-		JLabel ymLbl = new JLabel("Yue Ming's Section");
+		JLabel ymLbl = new JLabel("Global FoodBanking Network");
 		JLabel zjLbl = new JLabel("Zi Jie's Section");
 		JLabel merchLbl = new JLabel("Merch"); 
 		JLabel subLbl = new JLabel("Subscription");

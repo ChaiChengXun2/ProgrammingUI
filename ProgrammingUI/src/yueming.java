@@ -6,16 +6,16 @@ public class yueming
 {
 	public static JPanel newPanel()
 	{ 
-		ImageIcon FBimg = new ImageIcon("ProgrammingUI/src/Global-FoodBanking.png");
+		ImageIcon FBimg = new ImageIcon("ProgrammingUI\\src\\Global-Foodbanking.png");
 		//ImageIcon Givemeal = new ImageIcon("ProgrammingUI\\src\\GiveAmeal.jfif");
-		ImageIcon Whydonate = new ImageIcon("ProgrammingUI\\src\\whydonate.png");
+		ImageIcon Whydonate = new ImageIcon("ProgrammingUI\\\\src\\\\howFoodBankingWorks.jpg");
 		ImageIcon noHungerpic = new ImageIcon("ProgrammingUI\\src\\no-Hunger.png");
 		JPanel panel = new JPanel(); 
 		panel.setPreferredSize(new Dimension(1050, 625));
 		panel.setBackground(Color.decode("#caebd7"));
 		//hex color codes require Color.decode to work
 		panel.setLayout(new BorderLayout());
-		
+	
 		
 
 		
@@ -55,7 +55,7 @@ public class yueming
 	    
 		
 		JPanel Cen = new JPanel(); //center panel created
-		JPanel mealNowPanel = new JPanel(); // to make the card button smaller, another panel is created to exclusively put the button in
+		JPanel mealNowPanel = new JPanel(); // to make the card button smaller, another panel is created to exclusively put the button ine
 		Cen.setBackground(Color.decode("#caebd7"));
 		Cen.setLayout(new BorderLayout());
 		//Cen.add(Gmeal,BorderLayout.CENTER);
@@ -65,6 +65,7 @@ public class yueming
 		
 		mealNowPanel.add(DmealNow); // add the button into its standalone panel
 		mealNowPanel.setBackground(Color.decode("#caebd7"));
+		
 		
 		panel.add(Cen,BorderLayout.CENTER);
 		
@@ -77,7 +78,89 @@ public class yueming
 		Nor.add(WDonate,BorderLayout.EAST);
 		panel.add(Nor,BorderLayout.NORTH); //Nor panel becomes the top part of main panel
 		
-		JPanel Rig = new JPanel(); //dummy right panel for centerring?
+		DmealNow.addMouseListener(new MouseAdapter() { //giving the button funcationality
+			public void mouseClicked(MouseEvent e) {	
+	
+				JFrame DonationFrameFood = new JFrame();
+				DonationFrameFood.setTitle("Donate to help end world hunger today");
+				
+				
+				JPanel donoMain = new JPanel();
+				donoMain.setPreferredSize(new Dimension(700, 380));
+				donoMain.setBackground(Color.decode("#caebd7"));
+				
+				donoMain.setLayout(new FlowLayout());
+				
+				JTextField CSTMdono = new JTextField(10);  //text field to enter custom donation amont
+				
+				if (!(login.isLogin)) {
+					
+					JLabel pleaseregister = new JLabel("Please login to make a donation");
+					
+					pleaseregister.setFont(new Font("Alice", Font.BOLD, 16));
+					pleaseregister.setHorizontalAlignment(JLabel.CENTER);
+					pleaseregister.setPreferredSize(new Dimension(400, 50));
+					pleaseregister.setForeground(Color.red);
+				
+					
+				
+					DonationFrameFood.setSize(300,100);
+					donoMain.add(pleaseregister);
+					
+				} 
+				
+				else {
+					
+				JPanel donationImage = new JPanel();
+				donationImage.add(new JLabel(new ImageIcon("ProgrammingUI\\src\\whydonate.png")));
+				donationImage.setPreferredSize(new Dimension(350, 250));
+				
+				JLabel appreciation = new JLabel("<html>Thank you for your contribution to end world hunger.<br>Please choose donation amount.</html>");
+				appreciation.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+				appreciation.setHorizontalAlignment(JLabel.LEFT);
+				appreciation.setPreferredSize(new Dimension(350,75));
+				
+				JPanel donoAmou = new JPanel();
+				donoAmou.setPreferredSize(new Dimension(350, 250));
+				donoAmou.setBackground(Color.decode("#caebd7"));
+				
+				
+				
+					ButtonGroup amountGroup1 = new ButtonGroup();
+					JRadioButton amount1 = new JRadioButton("20 Dollars", true);
+					JRadioButton amount2 = new JRadioButton("50 Dollars", false);
+					JRadioButton amount3 = new JRadioButton("100 Dollars", false);
+					JRadioButton CSTMamount = new JRadioButton("Custom", false);
+				
+					amountGroup1.add(amount1);
+					amountGroup1.add(amount2);
+					amountGroup1.add(amount3);
+					amountGroup1.add(CSTMamount);
+					donoAmou.add(amount1);
+					donoAmou.add(amount2);
+					donoAmou.add(amount3);
+					donoAmou.add(CSTMamount);
+					donoAmou.add(CSTMdono);
+				
+				
+				
+				DonationFrameFood.setSize(800,500);
+				
+				donoMain.add(donationImage, BorderLayout.EAST);
+				donoMain.add(appreciation, BorderLayout.WEST);
+				donoMain.add(donoAmou, BorderLayout.SOUTH);
+				
+				}
+		
+		DonationFrameFood.add(donoMain);
+		DonationFrameFood.setLocationRelativeTo(null);
+		DonationFrameFood.setVisible(true);
+				}	
+		    });
+		
+			
+		
+		JPanel Rig = new JPanel(); //dummy right panel for centering
 		Rig.setBackground(Color.decode("#caebd7"));
 		
 		
@@ -91,7 +174,7 @@ public class yueming
 		//write your code above
 		
 		
-		
+		}
 	}
-}
+
 
