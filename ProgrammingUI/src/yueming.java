@@ -84,6 +84,17 @@ public class yueming
 				JFrame DonationFrameFood = new JFrame();
 				DonationFrameFood.setTitle("Donate to help end world hunger today");
 				
+				JButton donoButt = new JButton();
+				donoButt.setText("DONATE");
+				donoButt.setSize(200, 250);
+				donoButt.addMouseListener(new MouseAdapter() {
+					public void mouseClicked(MouseEvent e)
+					{
+						DonationFrameFood.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					}
+				});
+				
+				
 				
 				JPanel donoMain = new JPanel();
 				donoMain.setPreferredSize(new Dimension(700, 380));
@@ -115,7 +126,7 @@ public class yueming
 				donationImage.add(new JLabel(new ImageIcon("ProgrammingUI\\src\\whydonate.png")));
 				donationImage.setPreferredSize(new Dimension(350, 250));
 				
-				JLabel appreciation = new JLabel("<html>Thank you for your contribution to end world hunger.<br>Please choose donation amount.</html>");
+				JLabel appreciation = new JLabel("<html>Thank you for your contribution to end world hunger.<br>Please choose your donation amount.</html>");
 				appreciation.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 				appreciation.setHorizontalAlignment(JLabel.LEFT);
 				appreciation.setPreferredSize(new Dimension(350,75));
@@ -130,15 +141,18 @@ public class yueming
 					JRadioButton amount1 = new JRadioButton("20 Dollars", true);
 					JRadioButton amount2 = new JRadioButton("50 Dollars", false);
 					JRadioButton amount3 = new JRadioButton("100 Dollars", false);
+					JRadioButton amount4 = new JRadioButton("200 Dollars", false);
 					JRadioButton CSTMamount = new JRadioButton("Custom", false);
 				
 					amountGroup1.add(amount1);
 					amountGroup1.add(amount2);
 					amountGroup1.add(amount3);
+					amountGroup1.add(amount4);
 					amountGroup1.add(CSTMamount);
 					donoAmou.add(amount1);
 					donoAmou.add(amount2);
 					donoAmou.add(amount3);
+					donoAmou.add(amount4);
 					donoAmou.add(CSTMamount);
 					donoAmou.add(CSTMdono);
 				
@@ -146,9 +160,10 @@ public class yueming
 				
 				DonationFrameFood.setSize(800,500);
 				
-				donoMain.add(donationImage, BorderLayout.EAST);
+				donoMain.add(donationImage, BorderLayout.NORTH);
 				donoMain.add(appreciation, BorderLayout.WEST);
-				donoMain.add(donoAmou, BorderLayout.SOUTH);
+				donoMain.add(donoAmou, BorderLayout.CENTER);
+				donoMain.add(donoButt,BorderLayout.SOUTH);
 				
 				}
 		
