@@ -2,8 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class zijie
+public class zijie extends JPanel
 {
+	
+	JRadioButton jRadioButton;
+	JTextField jTextField;
+	
+		zijie(String radioButtonName) {
+	    jRadioButton = new JRadioButton(radioButtonName);
+	    jTextField = new JTextField(10);
+	    jRadioButton.setBackground(Color.decode("#ddefe3"));
+	    this.setLayout(new FlowLayout());
+	    this.add(jRadioButton);
+	    this.add(jTextField);
+		}
+	
 	public static JPanel newPanel()
 	{ 
 		// Main Panel
@@ -299,16 +312,20 @@ public class zijie
 					JRadioButton amount4 = new JRadioButton("100 Trees", false);
 					amount4.setBackground(Color.decode("#ddefe3"));
 					
+					zijie Others = new zijie("Other");		
+					Others.setBackground(Color.decode("#ddefe3"));
 				
 					amountGroup1.add(amount1);
 					amountGroup1.add(amount2);
 					amountGroup1.add(amount3);
 					amountGroup1.add(amount4);
+					amountGroup1.add(Others.jRadioButton);
 					
 					donationAMT.add(amount1);
 					donationAMT.add(amount2);
 					donationAMT.add(amount3);
 					donationAMT.add(amount4);
+					donationAMT.add(Others);
 				
 				
 				donationMain.add(donationImage);
