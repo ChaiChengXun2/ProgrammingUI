@@ -25,10 +25,12 @@ public class hongaik {
 		//Re-scaling the top image
 		BufferedImage img = null;
 		try {
+			
 			img = ImageIO.read(new File("ProgrammingUI/src/Banner.jpg"));
 		}
 		
 		catch (IOException e) {
+			
 			e.printStackTrace();
 		}
 		
@@ -66,10 +68,12 @@ public class hongaik {
 		JPanel BotCen = new JPanel();
         BufferedImage img2 = null;
 		try {
+			
 			img2 = ImageIO.read(new File("ProgrammingUI/src/trash.jpg"));
 		}
 		
 		catch (IOException e) {
+			
 			e.printStackTrace();
 		}
 		
@@ -122,10 +126,12 @@ public class hongaik {
 				//Image for donation panel
 				BufferedImage img2 = null;
 				try {
+					
 					img2 = ImageIO.read(new File("ProgrammingUI/src/underwater.jpg"));
 				}
 				
 				catch (IOException e) {
+					
 					e.printStackTrace();
 				}
 				
