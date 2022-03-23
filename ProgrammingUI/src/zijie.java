@@ -238,8 +238,6 @@ public class zijie extends JPanel
 				
 				if (!(login.isLogin)) {
 					
-					
-					
 					JLabel unregistered = new JLabel("Please login to make a donation");
 					unregistered.setFont(new Font("Verdana", Font.PLAIN, 16));
 					unregistered.setHorizontalAlignment(JLabel.CENTER);
@@ -252,7 +250,7 @@ public class zijie extends JPanel
 					
 					JPanel loginButton = new JPanel();
 					loginButton.setBackground(main.darkgreen);
-					loginButton.setPreferredSize(new Dimension(125, 65));
+					loginButton.setPreferredSize(new Dimension(125, 60));
 					loginButton.add(login);
 					
 					loginButton.addMouseListener(new MouseAdapter() {
@@ -286,14 +284,19 @@ public class zijie extends JPanel
 					
 				} else {
 					
-				JPanel donationImage = new JPanel();
-				donationImage.add(new JLabel(new ImageIcon("ProgrammingUI/src/Planting.jpg")));
-				donationImage.setPreferredSize(new Dimension(350, 250));
+				JLabel donationImage = new JLabel(new ImageIcon("ProgrammingUI/src/Planting.jpg"));
+				donationImage.setPreferredSize(new Dimension(300, 200));
 				
 				JLabel appreciation = new JLabel("<html>We would like to express our gratitude to you for supporting the effort.</html>");
 				appreciation.setFont(new Font("Open Sauce SemiBold", Font.PLAIN, 18));
 				appreciation.setHorizontalAlignment(JLabel.CENTER);
 				appreciation.setPreferredSize(new Dimension(350,75));
+				
+				JPanel topPanel = new JPanel();
+				topPanel.add(donationImage);
+				topPanel.add(appreciation);
+				topPanel.setBackground(Color.decode("#ddefe3"));
+				topPanel.setPreferredSize(new Dimension(800, 200));
 				
 				JPanel donationAMT = new JPanel();
 				donationAMT.setPreferredSize(new Dimension(350, 250));
@@ -314,7 +317,7 @@ public class zijie extends JPanel
 					
 					zijie Others = new zijie("Other");		
 					Others.setBackground(Color.decode("#ddefe3"));
-				
+					
 					amountGroup1.add(amount1);
 					amountGroup1.add(amount2);
 					amountGroup1.add(amount3);
@@ -326,13 +329,46 @@ public class zijie extends JPanel
 					donationAMT.add(amount3);
 					donationAMT.add(amount4);
 					donationAMT.add(Others);
+					
+					JPanel centerPanel = new JPanel();
+					centerPanel.add(donationAMT, BorderLayout.CENTER);
+					centerPanel.setBackground(Color.decode("#ddefe3"));
+					centerPanel.setPreferredSize(new Dimension(800, 100));
+					
+					JLabel donoM = new JLabel("<html><br>Donate now!</html>");
+					donoM.setForeground(Color.decode("#a8d8cd"));
+					
+					JPanel dono = new JPanel();
+					dono.setPreferredSize(new Dimension(200, 65));
+					dono.setBackground(main.darkgreen);
+					dono.add(donoM);
+					
+					JPanel bottomPanel = new JPanel();
+					bottomPanel.add(dono, BorderLayout.NORTH);
+					bottomPanel.setBackground(Color.decode("#ddefe3"));
+					bottomPanel.setPreferredSize(new Dimension(800, 200));
+					
+					dono.addMouseListener(new MouseAdapter() {
+					
+					public void mouseEntered(MouseEvent e) {
+						
+						donoM.setFont(new Font("Verdana", Font.BOLD, 12));
+						
+						}
+					
+					public void mouseExited(MouseEvent e) {
+						
+						donoM.setFont(new Font("Verdana", Font.PLAIN, 12));
+						
+						}
+					
+					});
 				
+				donationMain.add(topPanel);
+				donationMain.add(centerPanel, BorderLayout.CENTER);
+				donationMain.add(bottomPanel, BorderLayout.SOUTH);
 				
-				donationMain.add(donationImage);
-				donationMain.add(appreciation);
-				donationMain.add(donationAMT, BorderLayout.SOUTH);
-				
-				DonationFrame.setSize(800,500);
+				DonationFrame.setSize(800,600);
 				
 				}
 				
