@@ -407,7 +407,14 @@ public class zijie extends JPanel
 						
 						}
 					
-					});
+					// For button's functionality
+					public void mouseClicked(MouseEvent e) {
+						
+						DonationFrame.dispatchEvent(new WindowEvent(DonationFrame, WindowEvent.WINDOW_CLOSING));
+						
+					}
+				
+				});
 				
 				donationMain.add(topPanel);
 				donationMain.add(centerPanel, BorderLayout.CENTER);
