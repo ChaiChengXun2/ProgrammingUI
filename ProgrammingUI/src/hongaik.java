@@ -151,10 +151,11 @@ public class hongaik {
 					unregistered.setForeground(Color.red);
 					
 					JButton loginB = new JButton("Login");
+					JButton Cancel = new JButton("Cancel");
 					
 					donoSelection.add(unregistered, BorderLayout.NORTH);
 					donoSelection.add(loginB, BorderLayout.SOUTH);
-					
+					donoSelection.add(Cancel, BorderLayout.SOUTH);
 					DonationSea.add(donoSelection);
 					
 					loginB.addActionListener(new ActionListener() { 
@@ -164,28 +165,33 @@ public class hongaik {
 						}
 						
 					});
-					
+					Cancel.addActionListener(new ActionListener(){
+			    		public void actionPerformed(ActionEvent e) {
+			    			DonationSea.dispose();
+			    		}
+			    	});
 				}
 				
 				else { //Login successfully
 				
 					DonationSea.setResizable(false);
-					DonationSea.setSize(500, 400);
+					DonationSea.setSize(800, 500);
 					DonationSea.setVisible(true);
 					
 					JPanel donationImage = new JPanel();
 					donationImage.add(new JLabel(new ImageIcon(underwater)));
 					donationImage.setPreferredSize(new Dimension(400, 200));
 				
-				    JLabel appreciation = new JLabel("<html>Your contribution to save the ocean is much appreciated."
-						                        +"<br>Please choose donation amount.</html>");
+				    JLabel appreciation = new JLabel("<html>Please choose donation amount.");
 				    appreciation.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 				    appreciation.setHorizontalAlignment(JLabel.LEFT);
 				    appreciation.setPreferredSize(new Dimension(350,75));
 				
 				    JPanel Selection = new JPanel();
-				    Selection.setPreferredSize(new Dimension(350, 250));
+				    Selection.setPreferredSize(new Dimension(350, 350));
 				    Selection.setBackground(Color.decode("#FFB35C"));
+				    
+				    JLabel ThankYou = new JLabel();
 				
 			    	//RadioButton selection for donation
 				    ButtonGroup amountGroup1 = new ButtonGroup();
@@ -206,11 +212,33 @@ public class hongaik {
 				    Selection.add(amount4);
 				    Selection.add(amount5);
 		     		Selection.add(Others);
+		     		
+		     		//Confirmation button
+		     		JButton ConfirmC = new JButton("Confirm");
+		     		JButton CancelC = new JButton("Cancel");
+		     		Selection.add(ConfirmC);
+		     		Selection.add(CancelC);
 			
+		     		ConfirmC.addActionListener(new ActionListener() { 
+		    			public void actionPerformed(ActionEvent ae) {
+		    				ThankYou.setText("Your contribution to save the ocean is much appreciated!");
+		    				ThankYou.setFont(new Font("Times New Roman", Font.PLAIN, 15));
+		    			}
+		    			
+		     		});
+		     		
+		     		CancelC.addActionListener(new ActionListener(){
+			    		public void actionPerformed(ActionEvent e) {
+			    			DonationSea.dispose();
+			    		}
+			    		
+			    	});
+		     		
 	        		donoSelection.add(donationImage, BorderLayout.EAST);
 		        	donoSelection.add(appreciation, BorderLayout.WEST);
 		        	donoSelection.add(Selection, BorderLayout.SOUTH);
-			
+		        	donoSelection.add(ThankYou,BorderLayout.SOUTH);
+
 	         		DonationSea.add(donoSelection);
 	         		}
 				
